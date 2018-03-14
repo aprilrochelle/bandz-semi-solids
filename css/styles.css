@@ -1,0 +1,31 @@
+
+
+/*-------NAV BAR---------*/
+
+
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    text-align: center;
+} 
+
+.navbar li {
+    display: inline-block;
+    padding: 50px; 
+}
+.navbar li a {
+    color: #d09c2d;
+    font-size: 40px;
+    text-decoration: none;
+    font-family: 'Coda Caption', sans-serif;
+}
+
+.navbar li a:hover {
+    color: #8c271e;
+}
+
+
+
