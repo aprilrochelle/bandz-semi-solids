@@ -1,3 +1,5 @@
+
+//SONG LIST OBJECT ARRAY
 var Songs = [
   {
     songId: 1,
@@ -140,3 +142,13 @@ var Songs = [
     audioURL: "audioclips/Alash_Ensemble_-_01_-_Syyn_Miygak.mp3"
   }
 ]
+
+//testing...
+console.log("hello");
+
+// Write to DOM
+function writeToDom(outputString, outputId) {
+  document.getElementById(outputId).innerHTML = outputString;
+}
+
+
