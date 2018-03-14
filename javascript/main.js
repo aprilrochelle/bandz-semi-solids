@@ -141,7 +141,7 @@ var Songs = [
     duration: 105,
     audioURL: "audioclips/Alash_Ensemble_-_01_-_Syyn_Miygak.mp3"
   }
-]
+];
 
 //testing...
 console.log("hello");
