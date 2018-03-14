@@ -1,6 +1,6 @@
 
 //SONG LIST OBJECT ARRAY
-var Songs = [
+var songs = [
   {
     songId: 1,
     album: "Stick in the Mud",
