@@ -1,0 +1,31 @@
+body {
+  margin: 0px;
+  padding: 0px;
+}
+
+header {
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.band-header {
+  flex: 0 0 100%; /* Let it fill the entire space horizontally */
+  height: 300px;
+}
+
+footer {
+  position:fixed;
+  left:0px;
+  bottom:0px;
+  height:30px;
+  width:100%;
+  padding-bottom: 15px;
+  background-color: yellow;
+}
+
+footer p {
+  text-align: right;
+  margin-right: 10px;
+}
+
