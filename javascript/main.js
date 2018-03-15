@@ -24,28 +24,28 @@ var songs = [
     songId: 3,
     album: "Stick in the Mud",
     name: "Laughin' In The Dark",
-    duration: 105,
+    duration: "0:06",
     audioURL: "audioclips/cartoon-telephone_daniel_simion.mp3"
   },
   {
     songId: 4,
     album: "Stick in the Mud",
     name: "Play with my Heart",
-    duration: 105,
+    duration: "1:01",
     audioURL: "audioclips/flock-of-seagulls_daniel-simion.mp3"
   },
   {
     songId: 5,
     album: "Stick in the Mud",
     name: "Brush It Up",
-    duration: 146,
+    duration: "1:46",
     audioURL: "audioclips/hyena-laugh_daniel-simion.mp3"
   },
   {
     songId: 6,
     album: "Stick in the Mud",
     name: "It Ain't Natural",
-    duration: 359,
+    duration: "",
     audioURL: "audioclips/Kazoo-SoundBible.com-161921968.mp3"
   },
   {
