@@ -1,15 +1,8 @@
-//testing...
-console.log("hello");
-
-// Write to DOM
-// function writeToDom(outputString, outputId) {
-//   document.getElementById(outputId).innerHTML = outputString;
-// }
-
+//-----------BAND MEMBERS -------------------//
 
 var bandMembers =  [
   {
-  image: "/images/andy.jpg",
+  image: "../images/andy.jpg",
   name: "Andy Million",
   instrument: "Drums",
   age: 34,
@@ -18,7 +11,7 @@ var bandMembers =  [
   favoriteSemiSolid: "Toothpaste"
 },
 {
-  image: "/images/april.jpg",
+  image: "../images/april.jpg",
   name: "April Nichols",
   instrument: "Vocals, Tamborine and Keys",
   age: 35,
@@ -27,7 +20,7 @@ var bandMembers =  [
   favoriteSemiSolid: "Playdough"
 },
 {
-  image: "/images/amanda.jpg",
+  image: "../images/amanda.jpg",
   name: "Amanda Slayton",
   instrument: "Lead Vocals",
   age: 31,
@@ -36,7 +29,7 @@ var bandMembers =  [
   favoriteSemiSolid: "Oobleck"
 },
 {
-  image: "/images/mary.jpg",
+  image: "../images/mary.jpg",
   name: "Mary Alice Orr",
   instrument: "Harmony and Back-Up Dancing",
   age: 31,
@@ -45,7 +38,7 @@ var bandMembers =  [
   favoriteSemiSolid: "Mashed Potatoes"
 },
 {
-  image: "/images/nathan.jpg",
+  image: "../images/nathan.jpg",
   name: "Nathan Pabst",
   instrument: "Guitar",
   age: 38,
@@ -54,16 +47,17 @@ var bandMembers =  [
   favoriteSemiSolid: "Mac & Cheese"
 }];
 
-function bandMemberBuilder(bandMemberArray){
-  bandMemberArray.forEach(function(band){
+function bandMemberBuilder(bandArray){
+  bandArray.forEach(function(band){
     var string = "";
-    string += "<div class='band'>";
-    string += "<h3>" + bandMember.name + "</h3>";
-    string += "<h5>" + "Instrument: " + bandMember.instrument + "</h5>";
-    string += "<h5>" + "Age: " + bandMember.age + "</h5>";
-    string += "<h5>" + "Hometown: " + bandMember.hometown + "</h5>";
-    string += "<h5>" + "Favorite Band: " + bandMember.favoriteBand + "</h5>";
-    string += "<h5>" + "Favorite Semi-Solid: " + bandMember.favoriteSemiSolid + "</h5>";
+    string += "<div class='band-member'>";
+    string += "<image>" + bandMembers.image + "<image>";
+    string += "<h2>" + bandMembers.name + "</h2>";
+    string += "<h4>" + "Instrument: " + bandMembers.instrument + "</h4>";
+    string += "<h4>" + "Age: " + bandMembers.age + "</h4>";
+    string += "<h4>" + "Hometown: " + bandMembers.hometown + "</h4>";
+    string += "<h4>" + "Favorite Band: " + bandMembers.favoriteBand + "</h4>";
+    string += "<h4>" + "Favorite Semi-Solid: " + bandMembers.favoriteSemiSolid + "</h4>";
     string += "</div>";
     printToDom(string, 'band-member-holder')
   })

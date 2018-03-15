@@ -60,4 +60,33 @@ footer p {
   margin-right: 10px;
 }
 
+/*------------BAND MEMBERS---------------*/
+
+.band-member {
+  display: inline-block;
+  font-family: 'Coda Caption', sans-serif;
+  border: 10px solid #aba194;
+  background-color: #cfcbca;
+  height: 700px;
+  width: 400px;
+  margin: 50px 100px;
+  align-items: center;
+  box-shadow: 3px 3px 10px #aba194; 
+}
+
+.band-member h2 {
+  text-align: center;
+}
+
+.band-member h4 {
+  padding-left: 10px;
+  font-family: sans-serif;
+}
+
+.band-member image {
+  text-align: center;
+}
+
+
+
 
