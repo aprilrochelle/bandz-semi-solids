@@ -29,3 +29,8 @@ footer p {
   margin-right: 10px;
 }
 
+/* SONG LIST STYLING */
+.individual-song-container{
+  display: flex;
+  flex-direction: row;
+}

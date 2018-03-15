@@ -1,18 +1,23 @@
 
+// Write to DOM
+function writeToDom(outputString, outputId) {
+  document.getElementById(outputId).innerHTML = outputString;
+}
+
 //SONG LIST OBJECT ARRAY
 var songs = [
   {
     songId: 1,
     album: "Stick in the Mud",
     name: "Stuck On You",
-    duration: 186,
+    duration: "2:31",
     audioURL: "audioclips/audio_hero_Show-And-Tell_SIPML_Q-0149.mp3"
   },
   {
     songId: 2,
     album: "Stick in the Mud",
     name: "My Ooze",
-    duration: 203,
+    duration: "0:18",
     audioURL: "audioclips/baby-music-box_daniel-simion.mp3"
   },
   {
@@ -143,12 +148,21 @@ var songs = [
   }
 ];
 
-//testing...
-console.log("hello");
+function buildSongList(songArray){
+  var myString = "";
+  for(var i = 0; i < songs.length; i++){   
+    myString += "<article class='individual-song-container'>";
+    myString += "<p class='songID'>" + songArray[i].songId + "</p>";
+    myString += "<p class='song-name'>" + songArray[i].name + "</p>";
+    myString += "<p class='album-name'>" + songArray[i].album + "</p>";
+    myString += "<p class='song-duration'>" + songArray[i].duration + "</p>";
+    myString += "<audio src='/" + songArray[i].audioURL + "' class='audio-element' controls controlsList='nodownload'></audio>";
+    myString += "</article>";
+  };
+  writeToDom(myString,"song-container");
+};
+buildSongList(songs);
 
-// Write to DOM
-function writeToDom(outputString, outputId) {
-  document.getElementById(outputId).innerHTML = outputString;
-}
+
 
 
