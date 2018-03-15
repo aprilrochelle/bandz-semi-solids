@@ -12,25 +12,34 @@
   <header>
     <img src="/images/header-placeholder.jpg" class="band-header" alt="The Semi-Solids band">
   </header>
+  <!-- new paragraph about band -->
   <div class="index-wrapper">
     <div class="mini-tour">
-      <h1>hellohellohellohellohello</h1>
-      <h2>hellohellohellohellohellohello</h2>
-      <h3>hellohellohellohellohellohellohello</h3>
+      <h1>Upcoming Shows</h1>
+      <!-- JavaScript will output 3-5 shows here -->
     </div>
     <div class="contact-form">
       <form action="">
-        <label for="form-name">Name</label>
-        <input id="form-name" type="text" name="name">
+        <fieldset>
+          <legend>Your information</legend>
+          <label for="form-name">Name</label>
+          <input id="form-name" type="text" name="name" autocomplete="name">
 
-        <label for="form-email">Email</label>
-        <input id="form-email" type="email" name="email">
+          <label for="form-email">Email</label>
+          <input id="form-email" type="email" name="email" autocomplete="email">
 
-        <label for="form-phone">Phone</label>
-        <input id="form-phone" type="tel" name="phone">
+          <label for="form-phone">Phone</label>
+          <input id="form-phone" type="tel" name="phone" autocomplete="tel-national">
+        </fieldset>
 
-        <label for="form-message">Enter message</label>
-        <textarea id="form-message" name="message"  cols="30" rows="10"></textarea>
+        <fieldset>
+          <legend>Your message</legend>
+          <label for="form-message"></label>
+        <textarea id="form-message" name="message"  cols="30" rows="5"></textarea>
+        </fieldset>
+        <button>Submit</button>
+
+        
       </form>
     </div>
   </div>

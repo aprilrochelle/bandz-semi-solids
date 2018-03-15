@@ -22,11 +22,27 @@ header {
 }
 
 .mini-tour {
-  border: 1px solid red;
+  border: 1px solid #ABA194;
+  background-color: #CFCBCA;
+  padding: 10px;
 }
 
 .contact-form {
-  border: 1px solid red;
+  border: 1px solid #ABA194;
+  padding: 10px;
+  background-color: #CFCBCA;
+}
+fieldset {
+  margin-bottom: 10px;
+}
+input {
+  width: 100%;
+}
+textarea {
+  width: 100%;
+}
+.contact-form button {
+  /* margin: 10px; */
 }
 
 footer {
