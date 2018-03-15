@@ -151,6 +151,7 @@ function writeToDom(outputString, outputId) {
   document.getElementById(outputId).innerHTML = outputString;
 }
 
+
 // MERCH OBJECT
 var merch = [
   {
