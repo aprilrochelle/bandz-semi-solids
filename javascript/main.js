@@ -161,6 +161,7 @@ function buildSongList(songArray){
   };
   writeToDom(myString,"song-container");
 };
+
 buildSongList(songs);
 
 
