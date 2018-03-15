@@ -28,4 +28,4 @@ var merch = [
     description: "Keep the party going with the greatest Semi-Solids hits on VINYL! How cool are YOU?!",
     link: "url"
   }
-]
+];
