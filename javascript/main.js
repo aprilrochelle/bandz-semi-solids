@@ -6,6 +6,7 @@ function writeToDom(outputString, outputId) {
   document.getElementById(outputId).innerHTML = outputString;
 }
 
+// MERCH OBJECT
 var merch = [
   {
     item: "Semi-Solids Tee",
@@ -29,3 +30,9 @@ var merch = [
     link: "url"
   }
 ];
+
+// SHOW MERCH FUNCTION
+function showMerch(){
+
+  writeToDom(merchOutput, "merch-here");
+}
