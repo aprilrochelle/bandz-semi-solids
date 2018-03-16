@@ -20,9 +20,8 @@ header {
 
 .navbar ul {
     list-style-type: none;
-    margin: 0;
+    margin-bottom: 0;
     padding: 0;
-    padding-top: -10px;
     width: 100%;
   
     text-align: center;
@@ -58,33 +57,48 @@ footer {
 footer p {
   text-align: right;
   margin-right: 10px;
+  padding-top: 20px;
 }
 
 /*------------BAND MEMBERS---------------*/
+#band-member-holder {
+  
+  height: 815px;
+  text-align: center;
+  width: 100%;
+}
 
-.band-member {
+.band-container {
   display: inline-block;
+  vertical-align: top;
   font-family: 'Coda Caption', sans-serif;
   border: 10px solid #aba194;
   background-color: #cfcbca;
-  height: 700px;
-  width: 400px;
-  margin: 50px 100px;
+  height: 800px;
+  width: 425px;
+  margin: 50px 70px;
   align-items: center;
   box-shadow: 3px 3px 10px #aba194; 
 }
 
-.band-member h2 {
+.band-container h2 {
   text-align: center;
+  font-size: 30px;
 }
 
-.band-member h4 {
+.band-container p {
+  text-align: left;
+  vertical-align: text-bottom;
   padding-left: 10px;
+  font-size: 22px;
   font-family: sans-serif;
+
 }
 
-.band-member image {
-  text-align: center;
+.band-photo {
+  width: 425px;
+  height: 425px;
+  
 }
 
 

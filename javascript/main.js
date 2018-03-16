@@ -48,16 +48,16 @@ var bandMembers =  [
 }];
 
 function bandMemberBuilder(bandArray){
-  bandArray.forEach(function(band){
+  bandArray.forEach(function(bandMember){
     var string = "";
-    string += "<div class='band-member'>";
-    string += "<image>" + bandMembers.image + "<image>";
-    string += "<h2>" + bandMembers.name + "</h2>";
-    string += "<h4>" + "Instrument: " + bandMembers.instrument + "</h4>";
-    string += "<h4>" + "Age: " + bandMembers.age + "</h4>";
-    string += "<h4>" + "Hometown: " + bandMembers.hometown + "</h4>";
-    string += "<h4>" + "Favorite Band: " + bandMembers.favoriteBand + "</h4>";
-    string += "<h4>" + "Favorite Semi-Solid: " + bandMembers.favoriteSemiSolid + "</h4>";
+    string += "<div class='band-container'>";
+      string += "<img class='band-photo' src='" + bandMember.image + "'>";
+      string += "<h2>" + bandMember.name + "</h2>";
+      string += "<p>" + "<strong>Instrument: </strong>" + bandMember.instrument + "</p>";
+      string += "<p>" + "<strong>Age: </strong>" + bandMember.age + "</p>";
+      string += "<p>" + "<strong>Hometown: </strong>" + bandMember.hometown + "</p>";
+      string += "<p>" + "<strong>Favorite Band: </strong>" + bandMember.favoriteBand + "</p>";
+      string += "<p>" + "<strong>Favorite Semi-Solid: </strong>" + bandMember.favoriteSemiSolid + "</p>";
     string += "</div>";
     printToDom(string, 'band-member-holder')
   })
