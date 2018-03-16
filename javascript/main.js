@@ -74,7 +74,7 @@ var songs = [
     album: "Stick in the Mud",
     name: "Stick It (And See What Happens)",
     duration: "4:65",
-    audioURL: "audioclips/ Mystic_Chanting_4-Marianne_Gagnon-591053853.mp3"
+    audioURL: "audioclips/Mystic_Chanting_4-Marianne_Gagnon-591053853.mp3"
   },
   {
     songId: 11,
@@ -150,6 +150,14 @@ var songs = [
 
 function buildSongList(songArray){
   var myString = "";
+  myString += "<article class='song-header'>";
+  myString += "<p class='songID'>ID</p>";
+  myString += "<p class='song-name'>Song</p>";
+  myString += "<p class='album-name'>Album</p>";
+  myString += "<p class='song-duration'>Duration</p>";
+  myString += "<p class='audio-element'>Sample</p>";
+  myString += "</article>";
+
   for(var i = 0; i < songs.length; i++){   
     myString += "<article class='individual-song-container'>";
     myString += "<p class='songID'>" + songArray[i].songId + "</p>";
@@ -166,4 +174,27 @@ buildSongList(songs);
 
 
 
+var merch = [
+  {
+    item: "Semi-Solids Tee",
+    image: "/images/merch-tee.jpg",
+    price: 20,
+    description: "You'll look the hottest in your Semi-Solids logo tee! Cop yours today!",
+    link: "url"
+  },
+  {
+    item: "Semi-Solids Hat",
+    image: "/images/merch-hat.jpg",
+    price: 10,
+    description: "Complete the look with your Semi-Solids logo hat. One size fits most.",
+    link: "url"
+  },
+  {
+    item: "Semi-Solids Vinyl",
+    image: "/images/merch-vinyl.jpg",
+    price: 20,
+    description: "Keep the party going with the greatest Semi-Solids hits on VINYL! How cool are YOU?!",
+    link: "url"
+  }
+];
 

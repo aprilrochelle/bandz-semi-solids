@@ -30,7 +30,23 @@ footer p {
 }
 
 /* SONG LIST STYLING */
-.individual-song-container{
+.individual-song-container, .song-header{
   display: flex;
   flex-direction: row;
+  align-content: center;
+  width: 80%;
+  margin: auto;
+  border: 2px solid black;
+}
+
+.songID, .song-duration {
+  width: 10%;
+}
+
+.song-name, .album-name,.audio-element {
+  width: 25%;
+}
+
+.songID, .song-duration, .song-name, .album-name,.audio-element{
+  border: 1px dotted black;
 }
