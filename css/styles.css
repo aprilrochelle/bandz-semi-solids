@@ -1,5 +1,5 @@
 body {
-  margin: 0px;
+  margin: 0 0 100px 0;
   padding: 0px;
 }
 
@@ -14,17 +14,43 @@ header {
   height: 300px;
 }
 
+.band-summary {
+  margin: 0 auto;
+  width: 60%;
+  padding: 25px 25px;
+}
+
 /* index.html styling */
 .index-wrapper {
   display: flex;
   align-items: flex-start;
-  justify-content: space-evenly;
+  justify-content: space-around;
+  width: 70%;
+  margin: 0 auto;
 }
 
-.mini-tour {
+#mini-tour {
   border: 1px solid #ABA194;
   background-color: #CFCBCA;
   padding: 10px;
+}
+
+.itemForMiniTour {
+  display: block;
+}
+
+.firstMiniTourDiv,
+.secondMiniTourDiv,
+.thirdMiniTourDiv {
+  border-bottom: 1px solid #ABA194;
+  display: inline-block;
+  padding: 10px;
+}
+
+.firstMiniTourDiv:last-of-type,
+.secondMiniTourDiv:last-of-type,
+.thirdMiniTourDiv:last-of-type {
+  border-bottom: none;
 }
 
 .contact-form {
@@ -32,15 +58,19 @@ header {
   padding: 10px;
   background-color: #CFCBCA;
 }
+
 fieldset {
   margin-bottom: 10px;
 }
+
 input {
   width: 100%;
 }
+
 textarea {
   width: 100%;
 }
+
 .contact-form button {
   /* margin: 10px; */
 }
