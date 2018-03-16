@@ -1,8 +1,11 @@
+
+
 body {
   margin: 0px;
   padding: 0px;
 }
 
+/*-------BAND HEADER--------*/
 header {
   margin: 0;
   padding: 0;
@@ -10,9 +13,36 @@ header {
 }
 
 .band-header {
-  flex: 0 0 100%; /* Let it fill the entire space horizontally */
-  height: 300px;
+  width: 100%; /* Let it fill the entire space horizontally */
+  height: 500px;
 }
+/*-------NAV BAR---------*/
+
+.navbar ul {
+    list-style-type: none;
+    margin-bottom: 0;
+    padding: 0;
+    width: 100%;
+  
+    text-align: center;
+} 
+
+.navbar li {
+    display: inline-block;
+    padding: 50px; 
+}
+.navbar li a {
+    color: #d09c2d;
+    font-size: 40px;
+    text-decoration: none;
+    font-family: 'Coda Caption', sans-serif;
+}
+
+.navbar li a:hover {
+    color: #8c271e;
+}
+
+/*-------------FOOTER---------------*/
 
 footer {
   position:fixed;
@@ -21,7 +51,7 @@ footer {
   height:30px;
   width:100%;
   padding-bottom: 15px;
-  background-color: yellow;
+  background-color: #d09c2d;
 }
 
 footer p {
@@ -34,9 +64,7 @@ footer p {
   display: flex;
   flex-direction: row;
   align-content: center;
-  width: 80%;
-  margin: auto;
-  border: 2px solid black;
+  padding-left: 40px;
 }
 
 .songID, .song-duration {
@@ -47,10 +75,60 @@ footer p {
   width: 25%;
 }
 
-.songID, .song-duration, .song-name, .album-name,.audio-element{
-  border: 1px dotted black;
+.song-header{
+  background-color: #8C271E;
 }
 
-#song-container:nth-child(odd) {
-  background-color: yellow;
+article.individual-song-container:nth-child(odd), audio:nth-child(odd) {
+  background-color: #CFCBCA;
+}
+
+article.individual-song-container:nth-child(even), audio:nth-child(even){
+  background-color: #fff;
+}
+
+audio {
+  margin-top: 10px;
+}
+
+/*------------BAND MEMBERS---------------*/
+#band-member-holder {
+  height: 815px;
+  text-align: center;
+  width: 100%;
+}
+
+.band-container, #song-container {
+  font-family: 'Coda Caption', sans-serif;
+  border: 10px solid #aba194;
+  margin: 50px 70px;
+  align-items: center;
+  box-shadow: 3px 3px 10px #aba194; 
+}
+
+.band-container {
+  display: inline-block;
+  vertical-align: top;
+  height: 800px;
+  width: 425px;
+  background-color: #cfcbca;
+}
+
+.band-container h2 {
+  text-align: center;
+  font-size: 30px;
+}
+
+.band-container p {
+  text-align: left;
+  vertical-align: text-bottom;
+  padding-left: 10px;
+  font-size: 22px;
+  font-family: sans-serif;
+
+}
+
+.band-photo {
+  width: 425px;
+  height: 425px; 
 }

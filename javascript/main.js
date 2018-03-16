@@ -4,7 +4,76 @@ function writeToDom(outputString, outputId) {
   document.getElementById(outputId).innerHTML = outputString;
 }
 
-//SONG LIST OBJECT ARRAY
+
+// //-----------BAND MEMBERS -------------------//
+
+var bandMembers =  [
+  {
+    image: "/images/andy.jpg",
+    name: "Andy Million",
+    instrument: "Drums",
+    age: 34,
+    hometown: "Redford, MI",
+    favoriteBand: "Sublime",
+    favoriteSemiSolid: "Toothpaste"
+  },
+  {
+    image: "/images/april.jpg",
+    name: "April Nichols",
+    instrument: "Vocals, Tamborine and Keys",
+    age: 35,
+    hometown: "Memphis, TN",
+    favoriteBand: "Marvin Gaye, Frankie Beverly and Moonchild",
+    favoriteSemiSolid: "Playdough"
+  },
+  {
+    image: "/images/amanda.jpg",
+    name: "Amanda Slayton",
+    instrument: "Lead Vocals",
+    age: 31,
+    hometown: "North Tonawanda, NY",
+    favoriteBand: "Faun",
+    favoriteSemiSolid: "Oobleck"
+  },
+  {
+    image: "/images/mary.jpg",
+    name: "Mary Alice Orr",
+    instrument: "Harmony and Back-Up Dancing",
+    age: 31,
+    hometown: "Los Angeles, CA",
+    favoriteBand: "The Eagles",
+    favoriteSemiSolid: "Mashed Potatoes"
+  },
+  {
+    image: "/images/nathan.jpg",
+    name: "Nathan Pabst",
+    instrument: "Guitar",
+    age: 38,
+    hometown: "Kansas City, MO",
+    favoriteBand: "Father John Mitsy",
+    favoriteSemiSolid: "Mac & Cheese"
+  }
+];
+
+function bandMemberBuilder(bandArray){
+  var bandString = "";
+  bandArray.forEach(function(bandMember){
+      bandString += "<div class='band-container'>";
+      bandString += "<img class='band-photo' src='" + bandMember.image + "'>";
+      bandString += "<h2>" + bandMember.name + "</h2>";
+      bandString += "<p>" + "<strong>Instrument: </strong>" + bandMember.instrument + "</p>";
+      bandString += "<p>" + "<strong>Age: </strong>" + bandMember.age + "</p>";
+      bandString += "<p>" + "<strong>Hometown: </strong>" + bandMember.hometown + "</p>";
+      bandString += "<p>" + "<strong>Favorite Band: </strong>" + bandMember.favoriteBand + "</p>";
+      bandString += "<p>" + "<strong>Favorite Semi-Solid: </strong>" + bandMember.favoriteSemiSolid + "</p>";
+      bandString += "</div>";
+  });
+  writeToDom(bandString, 'band-member-holder');
+};
+
+
+//-----------SONG LIST OBJECT ARRAY------------//
+
 var songs = [
   {
     songId: 1,
@@ -155,7 +224,7 @@ function buildSongList(songArray){
   myString += "<p class='song-name'>Song</p>";
   myString += "<p class='album-name'>Album</p>";
   myString += "<p class='song-duration'>Duration</p>";
-  myString += "<p class='audio-element'>Sample</p>";
+  myString += "<p>Sample</p>";
   myString += "</article>";
 
   for(var i = 0; i < songs.length; i++){   
@@ -170,7 +239,7 @@ function buildSongList(songArray){
   writeToDom(myString,"song-container");
 };
 
-buildSongList(songs);
+
 
 
 
@@ -198,3 +267,14 @@ var merch = [
   }
 ];
 
+
+
+//DECIDES WHAT PAGE IS CURRENT AND CALLS APPROPRIATE FUNCTION
+//OTHERWISE ERRORS OUT
+var currentPage = document.title;
+var pageTitle = currentPage.split(" ").pop();
+if(pageTitle === "Band"){
+  bandMemberBuilder(bandMembers);
+}else if(pageTitle === "Songs"){
+  buildSongList(songs);
+};
