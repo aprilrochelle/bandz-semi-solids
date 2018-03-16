@@ -184,7 +184,7 @@ function showMerch(array){
     itemCard += '<img src="' + merchItem.image + '" alt="Merch Item" width="300">';
     itemCard += '<h4>Price: ' + merchItem.price + '</h4>';
     itemCard += '<p>' + merchItem.description + '</p>';
-    itemCard += '<a href="' + merchItem.link + '"><button>Buy Now</button></a>';
+    itemCard += '<a href="' + merchItem.link + '"><button>Buy Now</button></a></div>';
   });
   writeToDom(itemCard, "merch-here");
 };
