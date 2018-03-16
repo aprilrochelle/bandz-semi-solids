@@ -10,17 +10,23 @@ header {
 }
 
 .band-header {
-  flex: 0 0 100%; /* Let it fill the entire space horizontally */
-  height: 300px;
+  width: 100%;
+  height: 550px;
+}
+
+h1 {
+  text-align: center;
 }
 
 footer {
-  position:fixed;
+  /* position:fixed; */
   left:0px;
   bottom:0px;
   height:30px;
   width:100%;
+  margin-top: 50px;
   padding-bottom: 15px;
+  padding-top: 5px;
   background-color: yellow;
 }
 
@@ -29,3 +35,22 @@ footer p {
   margin-right: 10px;
 }
 
+/* --------------------MERCH PAGE---------------------- */
+#merch-here {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.merch-card {
+  background-color: #CFCBCA;
+  border: 5px solid #ABA194;
+  width: 25%;
+  margin: 0 2%;
+  padding: 0 7px 10px 7px;
+  display: inline-block;
+  text-align: center;
+}
+
+.merch-card img {
+  max-width: 95%;
+}

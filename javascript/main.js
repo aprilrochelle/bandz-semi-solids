@@ -159,33 +159,34 @@ var merch = [
     image: "/images/merch-tee.jpg",
     price: 20,
     description: "You'll look the hottest in your Semi-Solids logo tee! Cop yours today!",
-    link: "url"
+    link: "/html/suckit.html"
   },
   {
     item: "Semi-Solids Hat",
     image: "/images/merch-hat.jpg",
     price: 10,
     description: "Complete the look with your Semi-Solids logo hat. One size fits most.",
-    link: "url"
+    link: "/html/suckit.html"
   },
   {
     item: "Semi-Solids Vinyl",
     image: "/images/merch-vinyl.jpg",
     price: 20,
     description: "Keep the party going with the greatest Semi-Solids hits on VINYL! How cool are YOU?!",
-    link: "url"
+    link: "/html/suckit.html"
   }
 ];
 
 // SHOW MERCH FUNCTION
 function showMerch(array){
-  array.forEach(function(merchItem){
-    var itemCard = '<div class="merch-card"><h3>' + merchItem.item + '</h3>';
-    itemCard += '<img src="' + merchItem.image + '" alt="Merch Item" width="300">';
-    itemCard += '<h4>Price: ' + merchItem.price + '</h4>';
-    itemCard += '<p>' + merchItem.description + '</p>';
-    itemCard += '<a href="' + merchItem.link + '"><button>Buy Now</button></a></div>';
-  });
+  var itemCard;
+  for (var i=0; i<array.length; i++) {
+    itemCard += '<div class="merch-card"><h3>' + array[i].item + '</h3>';
+    itemCard += '<img src="' + array[i].image + '" alt="Merch Item" width="300">';
+    itemCard += '<h4>Price: ' + array[i].price + ' USD</h4>';
+    itemCard += '<p>' + array[i].description + '</p>';
+    itemCard += '<a href="' + array[i].link + '"><button>Buy Now</button></a></div>';
+  };
   writeToDom(itemCard, "merch-here");
 };
 
