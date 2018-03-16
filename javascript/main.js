@@ -178,7 +178,15 @@ var merch = [
 ];
 
 // SHOW MERCH FUNCTION
-function showMerch(){
+function showMerch(array){
+  array.forEach(function(merchItem){
+    var itemCard = '<div class="merch-card"><h3>' + merchItem.item + '</h3>';
+    itemCard += '<img src="' + merchItem.image + '" alt="Merch Item" width="300">';
+    itemCard += '<h4>Price: ' + merchItem.price + '</h4>';
+    itemCard += '<p>' + merchItem.description + '</p>';
+    itemCard += '<a href="' + merchItem.link + '"><button>Buy Now</button></a>';
+  });
+  writeToDom(itemCard, "merch-here");
+};
 
-  writeToDom(merchOutput, "merch-here");
-}
+showMerch(merch);
