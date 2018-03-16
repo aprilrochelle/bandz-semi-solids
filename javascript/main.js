@@ -89,18 +89,18 @@ var tourSchedule = [
 ]
 
 function createEvent(myEvent){
-for (var i = 0; i < myEvent.length; i++){
   var tourString = "";
-    tourString += '<div id="Events">';
-    tourString += '<td>' + myEvent[i].date + '</td>';
-    tourString += '<td>' + myEvent[i].city + '</td>';
-    tourString += '<td>' + myEvent[i].state + '</td>';
-    tourString += '<td>' + myEvent[i].time + '</td>';
-    tourString += '<td>' + myEvent[i].venue + '</td>';
-    tourString += '<td>' + myEvent[i].tickets + '</td>';
+  for (var i = 0; i < myEvent.length; i++){
+    tourString += '<div class="events">';
+    tourString += '<p>' + myEvent[i].date + '</p>';
+    tourString += '<p>' + myEvent[i].city + '</p>';
+    tourString += '<p>' + myEvent[i].state + '</p>';
+    tourString += '<p>' + myEvent[i].time + '</p>';
+    tourString += '<p>' + myEvent[i].venue + '</p>';
+    tourString += '<a href="' + myEvent[i].tickets + '"><button>Buy Now</button></a>';
     tourString += '</div>';
   writeToDom(tourString, "tourSchedule");  
-}
-createEvent(tourSchedule);
+  }
     
 }
+createEvent(tourSchedule);

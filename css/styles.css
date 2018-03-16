@@ -13,7 +13,13 @@ header {
   flex: 0 0 100%; /* Let it fill the entire space horizontally */
   height: 300px;
 }
-
+.events {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  margin: 10px;
+  flex: 1 1 1 160px;
+}
 footer {
   position:fixed;
   left:0px;
