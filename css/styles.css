@@ -50,3 +50,7 @@ footer p {
 .songID, .song-duration, .song-name, .album-name,.audio-element{
   border: 1px dotted black;
 }
+
+#song-container:nth-child(odd) {
+  background-color: yellow;
+}
