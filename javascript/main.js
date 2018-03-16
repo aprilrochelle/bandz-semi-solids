@@ -46,11 +46,12 @@ var tourDates = [
 // date city state venue time
 // date city state
 function indexMiniTourCard(inputTour) {
-  inputTour.forEach(function(e) {
-    var miniTourOutput = 
-      "<div class='itemForMiniTour'></div><div class='firstMiniTourDiv'><p>" + e.date + "</p></div>" +
+  inputTour.slice(0,3).forEach(function(e) {  //only returns first three shows
+    var miniTourOutput =
+      "<div class='itemForMiniTour'><div class='firstMiniTourDiv'><p>" + e.date + "</p></div>" +
       "<div class='secondMiniTourDiv'><p>" + e.city + "</p></div>" +
-      "<div class='thirdMiniTourDiv'><p>" + e.state + "</p></div></div>";
+      "<div class='thirdMiniTourDiv'><p>" + e.state + "</p></div>" +
+      "<div class='fourthMiniTourDiv'><p>" + e.venue + "</p></div></div>";
     writeToDom(miniTourOutput, "mini-tour");
   });
 }
