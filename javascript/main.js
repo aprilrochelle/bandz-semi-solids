@@ -73,8 +73,6 @@ function bandMemberBuilder(bandArray){
 writeToDom(bandString, 'band-member-holder');
 };
 
-
-
 //-----------SONG LIST OBJECT ARRAY------------//
 
 var songs = [
@@ -220,6 +218,18 @@ var songs = [
   }
 ];
 
+//-------------HOME----------------------//
+
+function indexMiniTourCard(tourDates) {
+  tourDates.slice(0,3).forEach(function(e) {  //only returns first three shows
+    var miniTourOutput =
+      "<div class='itemForMiniTour'><div class='firstMiniTourDiv'><p>" + e.date + "</p></div>" +
+      "<div class='secondMiniTourDiv'><p>" + e.city + "</p></div>" +
+      "<div class='thirdMiniTourDiv'><p>" + e.state + "</p></div>" +
+      "<div class='fourthMiniTourDiv'><p>" + e.venue + "</p></div></div>";
+    writeToDom(miniTourOutput, "mini-tour");
+  });
+}
 
 function buildSongList(songArray){
   var myString = "";
@@ -352,8 +362,6 @@ function createEvent(myEvent){
   writeToDom(tourString, "tourSchedule");    
 };
 
-
-
 // MERCH OBJECT
 
 var merch = [
@@ -393,8 +401,6 @@ function showMerch(array) {
   writeToDom(itemCard, "merch-here");
 };
 
-
-
 //DECIDES WHAT PAGE IS CURRENT AND CALLS APPROPRIATE FUNCTION
 //OTHERWISE ERRORS OUT
 var currentPage = document.title;
@@ -405,5 +411,6 @@ if(pageTitle === "Band"){
   buildSongList(songs);
 } else if (pageTitle === "Merch") {
   showMerch(merch);
-};
-
+} else if (pageTitle === "Home") {
+  indexMiniTourCard(tourSchedule);
+} 
