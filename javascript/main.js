@@ -264,10 +264,12 @@ var suckItMsg = [
 ]
 
 function suckIt(msgArray){
-
+  
   var myMsg = msgArray[Math.floor(Math.random() * msgArray.length)];
   var msg = new SpeechSynthesisUtterance(myMsg);
   window.speechSynthesis.speak(msg);
+
+  
 };
 
 
