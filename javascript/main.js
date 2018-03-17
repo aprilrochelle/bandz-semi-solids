@@ -60,16 +60,16 @@ function bandMemberBuilder(bandArray){
       string += "<p>" + "<strong>Favorite Band: </strong>" + bandMember.favoriteBand + "</p>";
       string += "<p>" + "<strong>Favorite Semi-Solid: </strong>" + bandMember.favoriteSemiSolid + "</p>";
     string += "</div>";
-    printToDom(string, 'band-member-holder')
+    writeToDom(string, 'band-member-holder');
   })
 }
 
-function printToDom(domString, divId){
-  var element = document.getElementById(divId);
-  element.innerHTML += domString;
-}
+// function printToDom(domString, divId){
+//   var element = document.getElementById(divId);
+//   element.innerHTML += domString;
+// }
 
-bandMemberBuilder(bandMembers);
+// bandMemberBuilder(bandMembers);
 
 
 //-----------SONG LIST OBJECT ARRAY------------//
@@ -309,6 +309,7 @@ var tourSchedule = [
 
 function createEvent(myEvent){
   var tourString = "";
+  console.log("hi");
     tourString += "<article class='event-header'>";
     tourString += "<p class='date'>Date</p>";
     tourString += "<p class='city'>City</p>";
@@ -316,17 +317,19 @@ function createEvent(myEvent){
     tourString += "<p class='time'>Time</p>";
     tourString += "<p class='venue'>Venue</p>";
     tourString += "<p class='tickets'>Tickets</p>";
-    myString += "</article>";
+    tourString += "</article>";
     
   for (var i = 0; i < myEvent.length; i++){
     tourString += '<article class="events">';
     tourString += '<p class="date">' + myEvent[i].date + '</p>';
+    
     tourString += '<p class="city">' + myEvent[i].city + '</p>';
     tourString += '<p class="state">' + myEvent[i].state + '</p>';
     tourString += '<p class="time">' + myEvent[i].time + '</p>';
     tourString += '<p class="venue">' + myEvent[i].venue + '</p>';
     tourString += '<a href="' + myEvent[i].tickets + '"><button>Buy Now</button></a>';
     tourString += '</article>';
+    console.log(tourString);
   };
   writeToDom(tourString, "tourSchedule");    
 };

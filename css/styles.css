@@ -44,24 +44,41 @@ header {
 
 /*-----------------TOUR SCHEDULE-------*/
 
+.event-header {
+  font-weight: 800;
+  font-size: 1.3em;
+  font-family: 'Coda Caption', sans-serif;
+
+}
 .event-header, .events {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
   align-content: center;
+  border-bottom: 1px solid #ABA194;
+  width: 50%;
+  margin: 0 auto;
+}
+.events {
+  font-family: sans-serif;
+  font-size: 18px;
 }
 .date, .state, .time {
   width: 10%;  
 }
 .city, .venue, .tickets {
-width: 30%;
+width: 20%;
+}
+.events button:hover {
+ background-color: grey;
+}
+.events button{
+  margin-top: 12px;
 }
 /*-------------FOOTER---------------*/
 
 footer {
-  position:fixed;
-  left:0px;
-  bottom:0px;
+  
   height:30px;
   width:100%;
   padding-bottom: 15px;
