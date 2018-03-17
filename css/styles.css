@@ -73,8 +73,8 @@ footer p {
   font-family: 'Coda Caption', sans-serif;
   border: 10px solid #aba194;
   background-color: #cfcbca;
-  height: 800px;
-  width: 425px;
+  height: 600px;
+  width: 300px;
   margin: 50px 70px;
   align-items: center;
   box-shadow: 3px 3px 10px #aba194; 
@@ -82,21 +82,25 @@ footer p {
 
 .band-container h2 {
   text-align: center;
-  font-size: 30px;
+  font-size: 24px;
 }
 
 .band-container p {
   text-align: left;
   vertical-align: text-bottom;
   padding-left: 10px;
-  font-size: 22px;
+  font-size: 16px;
   font-family: sans-serif;
 
 }
 
 .band-photo {
-  width: 425px;
-  height: 425px;
+  width: 275px;
+  height: 275px;
+  border-radius: 50%;
+  border: 5px dotted black;
+  margin-top: 10px;
+  
   
 }
 
