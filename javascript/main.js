@@ -327,7 +327,6 @@ var tourSchedule = [
 
 function createEvent(myEvent){
   var tourString = "";
-  console.log("hi");
     tourString += "<article class='event-header'>";
     tourString += "<p class='date'>Date</p>";
     tourString += "<p class='city'>City</p>";
