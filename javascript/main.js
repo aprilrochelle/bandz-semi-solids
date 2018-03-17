@@ -1,7 +1,7 @@
 
 // Write to DOM
 function writeToDom(outputString, outputId) {
-  document.getElementById(outputId).innerHTML = outputString;
+  document.getElementById(outputId).innerHTML += outputString;
 }
 
 
@@ -415,4 +415,6 @@ if(pageTitle === "Band"){
   createEvent(tourSchedule);
 } else if (pageTitle === "Home") {
   indexMiniTourCard(tourSchedule);
-}; 
+} else if (pageTitle === "Tour") {
+  createEvent(tourSchedule);
+}
