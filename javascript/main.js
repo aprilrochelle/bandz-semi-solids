@@ -147,6 +147,27 @@ var songs = [
   }
 ];
 
+function buildSongList(songArray){
+  var myString = "";
+  myString += "<article class='song-header'>";
+  myString += "<p class='songID'>ID</p>";
+  myString += "<p class='song-name'>Song</p>";
+  myString += "<p class='album-name'>Album</p>";
+  myString += "<p class='song-duration'>Duration</p>";
+  myString += "<p>Sample</p>";
+  myString += "</article>";
+
+  for(var i = 0; i < songs.length; i++){   
+    myString += "<article class='individual-song-container'>";
+    myString += "<p class='songID'>" + songArray[i].songId + "</p>";
+    myString += "<p class='song-name'>" + songArray[i].name + "</p>";
+    myString += "<p class='album-name'>" + songArray[i].album + "</p>";
+    myString += "<p class='song-duration'>" + songArray[i].duration + "</p>";
+    myString += "<audio src='/" + songArray[i].audioURL + "' class='audio-element' controls controlsList='nodownload'></audio>";
+    myString += "</article>";
+  };
+  writeToDom(myString,"song-container");
+};
 
 //-----------BAND MEMBERS OBJECTS-------------------//
 
@@ -198,30 +219,59 @@ var bandMembers =  [
   }
 ];
 
-//-----------MERCHANDISE OBJECTS-----------//
+function bandMemberBuilder(bandArray){
+  var bandString = "";
+  bandArray.forEach(function(bandMember){
+      bandString += "<div class='band-container'>";
+      bandString += "<img class='band-photo' src='" + bandMember.image + "'>";
+      bandString += "<h2>" + bandMember.name + "</h2>";
+      bandString += "<p>" + "<strong>Instrument: </strong>" + bandMember.instrument + "</p>";
+      bandString += "<p>" + "<strong>Age: </strong>" + bandMember.age + "</p>";
+      bandString += "<p>" + "<strong>Hometown: </strong>" + bandMember.hometown + "</p>";
+      bandString += "<p>" + "<strong>Favorite Band: </strong>" + bandMember.favoriteBand + "</p>";
+      bandString += "<p>" + "<strong>Favorite Semi-Solid: </strong>" + bandMember.favoriteSemiSolid + "</p>";
+      bandString += "</div>";
+  });
+  writeToDom(bandString, 'band-member-holder');
+};
+
+
+// MERCH OBJECT
 var merch = [
   {
     item: "Semi-Solids Tee",
     image: "/images/merch-tee.jpg",
     price: 20,
     description: "You'll look the hottest in your Semi-Solids logo tee! Cop yours today!",
-    link: "url"
+    link: "/html/suckit.html"
   },
   {
     item: "Semi-Solids Hat",
     image: "/images/merch-hat.jpg",
     price: 10,
     description: "Complete the look with your Semi-Solids logo hat. One size fits most.",
-    link: "url"
+    link: "/html/suckit.html"
   },
   {
     item: "Semi-Solids Vinyl",
     image: "/images/merch-vinyl.jpg",
     price: 20,
-    description: "Keep the party going with the greatest Semi-Solids hits on VINYL! How cool are YOU?!",
-    link: "url"
+    description: "Keep the party going with the greatest Semi-Solids hits on VINYL!",
+    link: "/html/suckit.html"
   }
 ];
+
+function showMerch(array) {
+  var itemCard = "";
+  array.forEach(function(merchItem) {
+    itemCard += '<div class="merch-card"><h3>' + merchItem.item + '</h3>';
+    itemCard += '<img src="' + merchItem.image + '" alt="Merch Item" width="300">';
+    itemCard += '<h4>Price: ' + merchItem.price + ' USD</h4>';
+    itemCard += '<p>' + merchItem.description + '</p>';
+    itemCard += '<a href="' + merchItem.link + '"><button>Buy Now</button></a></div>';
+  });
+  writeToDom(itemCard, "merch-here");
+};
 
 //----------SUCK IT MESSAGE----------//
 var suckItMsg = [
@@ -239,49 +289,14 @@ var suckItMsg = [
   "I wouldn't say I've been missing it Bob."
 ];
 
-function bandMemberBuilder(bandArray){
-  var bandString = "";
-  bandArray.forEach(function(bandMember){
-      bandString += "<div class='band-container'>";
-      bandString += "<img class='band-photo' src='" + bandMember.image + "'>";
-      bandString += "<h2>" + bandMember.name + "</h2>";
-      bandString += "<p>" + "<strong>Instrument: </strong>" + bandMember.instrument + "</p>";
-      bandString += "<p>" + "<strong>Age: </strong>" + bandMember.age + "</p>";
-      bandString += "<p>" + "<strong>Hometown: </strong>" + bandMember.hometown + "</p>";
-      bandString += "<p>" + "<strong>Favorite Band: </strong>" + bandMember.favoriteBand + "</p>";
-      bandString += "<p>" + "<strong>Favorite Semi-Solid: </strong>" + bandMember.favoriteSemiSolid + "</p>";
-      bandString += "</div>";
-  });
-  writeToDom(bandString, 'band-member-holder');
-};
-
-function buildSongList(songArray){
-  var myString = "";
-  myString += "<article class='song-header'>";
-  myString += "<p class='songID'>ID</p>";
-  myString += "<p class='song-name'>Song</p>";
-  myString += "<p class='album-name'>Album</p>";
-  myString += "<p class='song-duration'>Duration</p>";
-  myString += "<p>Sample</p>";
-  myString += "</article>";
-
-  for(var i = 0; i < songs.length; i++){   
-    myString += "<article class='individual-song-container'>";
-    myString += "<p class='songID'>" + songArray[i].songId + "</p>";
-    myString += "<p class='song-name'>" + songArray[i].name + "</p>";
-    myString += "<p class='album-name'>" + songArray[i].album + "</p>";
-    myString += "<p class='song-duration'>" + songArray[i].duration + "</p>";
-    myString += "<audio src='/" + songArray[i].audioURL + "' class='audio-element' controls controlsList='nodownload'></audio>";
-    myString += "</article>";
-  };
-  writeToDom(myString,"song-container");
-};
 
 function suckIt(msgArray){
   var myMsg = msgArray[Math.floor(Math.random() * msgArray.length)];
   var msg = new SpeechSynthesisUtterance(myMsg);
   window.speechSynthesis.speak(msg);
 };
+
+
 
 
 //DECIDES WHAT PAGE IS CURRENT AND CALLS APPROPRIATE FUNCTION
@@ -293,7 +308,7 @@ if(pageTitle === "Band"){
 }else if(pageTitle === "Songs"){
   buildSongList(songs);
 }else if(pageTitle === "Merch"){
-  
+  showMerch(merch);
 }else if(pageTitle === "404"){
   suckIt(suckItMsg);
 };
