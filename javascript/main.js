@@ -349,8 +349,6 @@ function createEvent(myEvent){
   };
   writeToDom(tourString, "tourSchedule");    
 };
-createEvent(tourSchedule);
-
 
 // MERCH OBJECT
 
@@ -403,4 +401,6 @@ if(pageTitle === "Band"){
   buildSongList(songs);
 } else if (pageTitle === "Merch") {
   showMerch(merch);
+} else if (pageTitle === "Tour") {
+  createEvent(tourSchedule);
 };
