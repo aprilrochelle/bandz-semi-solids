@@ -217,6 +217,7 @@ var songs = [
   }
 ];
 
+
 function buildSongList(songArray){
   var myString = "";
   myString += "<article class='song-header'>";
@@ -240,32 +241,43 @@ function buildSongList(songArray){
 };
 
 
-
-
-
+// MERCH OBJECT
 var merch = [
   {
     item: "Semi-Solids Tee",
     image: "/images/merch-tee.jpg",
     price: 20,
     description: "You'll look the hottest in your Semi-Solids logo tee! Cop yours today!",
-    link: "url"
+    link: "/html/suckit.html"
   },
   {
     item: "Semi-Solids Hat",
     image: "/images/merch-hat.jpg",
     price: 10,
     description: "Complete the look with your Semi-Solids logo hat. One size fits most.",
-    link: "url"
+    link: "/html/suckit.html"
   },
   {
     item: "Semi-Solids Vinyl",
     image: "/images/merch-vinyl.jpg",
     price: 20,
-    description: "Keep the party going with the greatest Semi-Solids hits on VINYL! How cool are YOU?!",
-    link: "url"
+    description: "Keep the party going with the greatest Semi-Solids hits on VINYL!",
+    link: "/html/suckit.html"
   }
 ];
+
+// SHOW MERCH FUNCTION
+function showMerch(array) {
+  var itemCard = "";
+  array.forEach(function(merchItem) {
+    itemCard += '<div class="merch-card"><h3>' + merchItem.item + '</h3>';
+    itemCard += '<img src="' + merchItem.image + '" alt="Merch Item" width="300">';
+    itemCard += '<h4>Price: ' + merchItem.price + ' USD</h4>';
+    itemCard += '<p>' + merchItem.description + '</p>';
+    itemCard += '<a href="' + merchItem.link + '"><button>Buy Now</button></a></div>';
+  });
+  writeToDom(itemCard, "merch-here");
+};
 
 
 
@@ -277,4 +289,6 @@ if(pageTitle === "Band"){
   bandMemberBuilder(bandMembers);
 }else if(pageTitle === "Songs"){
   buildSongList(songs);
+} else if (pageTitle === "Merch") {
+  showMerch(merch);
 };
