@@ -414,4 +414,6 @@ if(pageTitle === "Band"){
   createEvent(tourSchedule);
 } else if (pageTitle === "Home") {
   indexMiniTourCard(tourSchedule);
-}; 
+} else if (pageTitle === "Tour") {
+  createEvent(tourSchedule);
+}
