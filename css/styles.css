@@ -13,9 +13,8 @@ header {
 }
 
 .band-header {
-
-  width: 100%;
-  height: 550px;
+  width: 100%; /* Let it fill the entire space horizontally */
+  height: 500px;
 }
 
 /*-------NAV BAR---------*/
@@ -113,6 +112,38 @@ footer p {
 .merch-card h4 {
   font-family: 'Coda Caption', sans-serif;
 }
+  
+/* SONG LIST STYLING */
+.individual-song-container, .song-header {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  padding-left: 40px;
+}
+
+.songID, .song-duration {
+  width: 10%;
+}
+
+.song-name, .album-name,.audio-element {
+  width: 25%;
+}
+
+.song-header{
+  background-color: #8C271E;
+}
+
+article.individual-song-container:nth-child(odd), audio:nth-child(odd) {
+  background-color: #CFCBCA;
+}
+
+article.individual-song-container:nth-child(even), audio:nth-child(even){
+  background-color: #fff;
+}
+
+audio {
+  margin-top: 10px;
+}
 
 /*------------BAND MEMBERS---------------*/
 #band-member-holder {
@@ -120,17 +151,20 @@ footer p {
   width: 100%;
 }
 
-.band-container {
-  display: inline-block;
-  vertical-align: top;
+.band-container, #song-container {
   font-family: 'Coda Caption', sans-serif;
   border: 10px solid #aba194;
-  background-color: #cfcbca;
-  height: 800px;
-  width: 425px;
   margin: 50px 70px;
   align-items: center;
   box-shadow: 3px 3px 10px #aba194; 
+}
+
+.band-container {
+  display: inline-block;
+  vertical-align: top;
+  height: 800px;
+  width: 425px;
+  background-color: #cfcbca;
 }
 
 .band-container h2 {
@@ -149,6 +183,5 @@ footer p {
 
 .band-photo {
   width: 425px;
-  height: 425px;
-  
+  height: 425px; 
 }
