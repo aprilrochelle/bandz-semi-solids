@@ -64,7 +64,7 @@ function bandMemberBuilder(bandArray){
   })
 }
 
-bandMemberBuilder(bandMembers);
+//bandMemberBuilder(bandMembers);
 
 
 //-----------SONG LIST OBJECT ARRAY------------//
@@ -219,7 +219,7 @@ function writeToDom(outputString, outputId) {
   document.getElementById(outputId).innerHTML += outputString;
 }
 
-var tourDates = [
+var tourSchedule = [
   {
     date: "01/01/2018",
     city: "Nashville",
@@ -268,7 +268,7 @@ function indexMiniTourCard(tourDates) {
   });
 }
 
-//indexMiniTourCard(tourSchedule);
+indexMiniTourCard(tourSchedule);
 
 var merch = [
   {
