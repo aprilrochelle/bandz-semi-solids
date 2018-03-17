@@ -1,7 +1,5 @@
-
-
 body {
-  margin: 0px;
+  margin: 0 0 100px 0;
   padding: 0px;
 }
 
@@ -9,12 +7,11 @@ body {
 header {
   margin: 0;
   padding: 0;
-  display: flex;
 }
 
 .band-header {
   width: 100%; /* Let it fill the entire space horizontally */
-  height: 500px;
+ 
 }
 
 /*-------NAV BAR---------*/
@@ -38,9 +35,105 @@ header {
     text-decoration: none;
     font-family: 'Coda Caption', sans-serif;
 }
-
 .navbar li a:hover {
     color: #8c271e;
+}
+
+.band-summary {
+  margin: 0 auto;
+  width: 60%;
+  padding: 25px 25px;
+}
+
+/* index.html styling */
+.index-wrapper {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  width: 75%;
+  margin: 0 auto;
+}
+
+#mini-tour {
+  border: 2px solid #ABA194;
+  background-color: #CFCBCA;
+  padding: 10px;
+  width: 40%;
+}
+
+#mini-tour h1 {
+  border-bottom: 2px solid #ABA194;
+  margin: 10px 0 0 0;
+  padding: 0 0 10px 0;
+  text-align: center;
+}
+
+.itemForMiniTour {
+  display: block;
+  border-bottom: 1px solid #ABA194;
+  text-align: center;
+}
+
+.itemForMiniTour:last-child {
+  display: block;
+  border-bottom: none;
+}
+
+.itemForMiniTour:hover {
+  background-color: #fff;
+  color: #8C271E;
+}
+
+.firstMiniTourDiv,
+.secondMiniTourDiv,
+.thirdMiniTourDiv,
+.fourthMiniTourDiv {
+  display: inline-block;
+  padding: 7px;
+}
+
+.contact-form {
+  border: 2px solid #ABA194;
+  padding: 10px;
+  background-color: #CFCBCA;
+  margin: 0 40px 0 40px;
+  width: 40%;
+}
+
+fieldset {
+  margin-bottom: 10px;
+  border: 1px solid #ABA194;
+}
+
+input {
+  width: 100%;
+  height: 22px;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+textarea {
+  width: 100%;
+  font-size: 18px;
+}
+
+.contact-main-label {
+  font-family: 'Coda Caption', sans-serif;
+  font-size: 20px;
+  text-align: center;  
+  color: #8c271e;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.contact-form button {
+  margin-left: 2px;
+  font-size: 18px;
+  padding: 8px;
+}
+
+.contact-form button:hover {
+  background-color: #D09C2D;
 }
 
 /*-----------------TOUR SCHEDULE-------*/
@@ -82,6 +175,7 @@ width: 20%;
 .events button{
   margin-top: 12px;
 }
+
 /*-------------FOOTER---------------*/
 
 footer {
@@ -153,6 +247,7 @@ footer p {
 }
   
 /* SONG LIST STYLING */
+
 .individual-song-container, .song-header {
   display: flex;
   flex-direction: row;
@@ -184,38 +279,45 @@ audio {
   margin-top: 10px;
 }
 
+#song-container {
+  font-family: 'Coda Caption', sans-serif;
+  border: 10px solid #aba194;
+  background-color: #cfcbca;
+  width: 90%;
+  margin: 50px 70px;
+  box-shadow: 3px 3px 10px #aba194; 
+}
+
 /*------------BAND MEMBERS---------------*/
 #band-member-holder {
   text-align: center;
   width: 100%;
 }
 
-.band-container, #song-container {
+.band-container {
+  display: inline-block;
+  vertical-align: top;
   font-family: 'Coda Caption', sans-serif;
   border: 10px solid #aba194;
+  background-color: #cfcbca;
+  height: 600px;
+  width: 325px;
   margin: 50px 70px;
   align-items: center;
   box-shadow: 3px 3px 10px #aba194; 
 }
 
-.band-container {
-  display: inline-block;
-  vertical-align: top;
-  height: 800px;
-  width: 425px;
-  background-color: #cfcbca;
-}
 
 .band-container h2 {
   text-align: center;
-  font-size: 30px;
+  font-size: 24px;
 }
 
 .band-container p {
   text-align: left;
   vertical-align: text-bottom;
   padding-left: 10px;
-  font-size: 22px;
+  font-size: 16px;
   font-family: sans-serif;
 
 }
@@ -251,4 +353,9 @@ h1.suckItElement {
   top: 200px;
   font-size: 5em;
   padding-left: 3opx;
+  width: 275px;
+  height: 275px;
+  border-radius: 50%;
+  border: 5px dashed black;
+  margin-top: 25px; 
 }

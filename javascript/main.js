@@ -3,7 +3,74 @@ function writeToDom(outputString, outputId) {
   document.getElementById(outputId).innerHTML = outputString;
 };
 
-//-----------SONG LIST OBJECTS------------//
+var bandMembers =  [
+  {
+    image: "/images/andy.jpg",
+    name: "Andy Million",
+    instrument: "Drums",
+    age: 34,
+    hometown: "Redford, MI",
+    favoriteBand: "Sublime",
+    favoriteSemiSolid: "Toothpaste"
+  },
+  {
+    image: "/images/april.jpg",
+    name: "April Nichols",
+    instrument: "Vocals, Tamborine and Keys",
+    age: 35,
+    hometown: "Memphis, TN",
+    favoriteBand: "Marvin Gaye, Frankie Beverly and Moonchild",
+    favoriteSemiSolid: "Playdough"
+  },
+  {
+    image: "/images/amanda.jpg",
+    name: "Amanda Slayton",
+    instrument: "Lead Vocals",
+    age: 31,
+    hometown: "North Tonawanda, NY",
+    favoriteBand: "Faun",
+    favoriteSemiSolid: "Oobleck"
+  },
+  {
+    image: "/images/mary.jpg",
+    name: "Mary Alice Orr",
+    instrument: "Harmony and Back-Up Dancing",
+    age: 31,
+    hometown: "Los Angeles, CA",
+    favoriteBand: "The Eagles",
+    favoriteSemiSolid: "Mashed Potatoes"
+  },
+  {
+    image: "/images/nathan.jpg",
+    name: "Nathan Pabst",
+    instrument: "Guitar",
+    age: 38,
+    hometown: "Kansas City, MO",
+    favoriteBand: "Father John Mitsy",
+    favoriteSemiSolid: "Mac & Cheese"
+  }
+];
+
+
+function bandMemberBuilder(bandArray){
+  var bandString = "";
+  bandArray.forEach(function(bandMember){
+    var string = "";
+    bandString += "<div class='band-container'>";
+    bandString += "<img class='band-photo' src='" + bandMember.image + "'>";
+    bandString += "<h2>" + bandMember.name + "</h2>";
+    bandString += "<p>" + "<strong>Instrument: </strong>" + bandMember.instrument + "</p>";
+    bandString += "<p>" + "<strong>Age: </strong>" + bandMember.age + "</p>";
+    bandString += "<p>" + "<strong>Hometown: </strong>" + bandMember.hometown + "</p>";
+    bandString += "<p>" + "<strong>Favorite Band: </strong>" + bandMember.favoriteBand + "</p>";
+    bandString += "<p>" + "<strong>Favorite Semi-Solid: </strong>" + bandMember.favoriteSemiSolid + "</p>";
+    bandString += "</div>";
+});
+writeToDom(bandString, 'band-member-holder');
+};
+
+//-----------SONG LIST OBJECT ARRAY------------//
+
 var songs = [
   {
     songId: 1,
@@ -146,6 +213,20 @@ var songs = [
     audioURL: "audioclips/Alash_Ensemble_-_01_-_Syyn_Miygak.mp3"
   }
 ];
+
+
+//-------------HOME----------------------//
+
+function indexMiniTourCard(tourDates) {
+  tourDates.slice(0,3).forEach(function(e) {  //only returns first three shows
+    var miniTourOutput =
+      "<div class='itemForMiniTour'><div class='firstMiniTourDiv'><p>" + e.date + "</p></div>" +
+      "<div class='secondMiniTourDiv'><p>" + e.city + "</p></div>" +
+      "<div class='thirdMiniTourDiv'><p>" + e.state + "</p></div>" +
+      "<div class='fourthMiniTourDiv'><p>" + e.venue + "</p></div></div>";
+    writeToDom(miniTourOutput, "mini-tour");
+  });
+}
 
 function buildSongList(songArray){
   var myString = "";
@@ -343,9 +424,6 @@ function createEvent(myEvent){
   };
   writeToDom(tourString, "tourSchedule");    
 };
-
-
-
 // MERCH OBJECT
 
 var merch = [
@@ -428,5 +506,7 @@ if(pageTitle === "Band"){
   createEvent(tourSchedule);
 }else if(pageTitle === "404"){
   suckIt(suckItMsg);
-};
+} else if (pageTitle === "Home") {
+  indexMiniTourCard(tourSchedule);
+} 
 
