@@ -37,23 +37,27 @@ header {
     text-decoration: none;
     font-family: 'Coda Caption', sans-serif;
 }
-<<<<<<< HEAD
-.events {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  margin: 10px;
-  flex: 1 1 1 160px;
-}
-=======
 
 .navbar li a:hover {
     color: #8c271e;
 }
 
+/*-----------------TOUR SCHEDULE-------*/
+
+.event-header, .events {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-content: center;
+}
+.date, .state, .time {
+  width: 10%;  
+}
+.city, .venue, .tickets {
+width: 30%;
+}
 /*-------------FOOTER---------------*/
 
->>>>>>> master
 footer {
   position:fixed;
   left:0px;

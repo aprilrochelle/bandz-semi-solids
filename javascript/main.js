@@ -223,7 +223,7 @@ console.log("hello");
 function writeToDom(outputString, outputId) {
   document.getElementById(outputId).innerHTML = outputString;
 }
-<<<<<<< HEAD
+
 var tourSchedule = [
   {
       date: "3/18/18",
@@ -305,25 +305,32 @@ var tourSchedule = [
       venue: "LA Forum",
       tickets: "suckit.html"
   },
-]
+];
 
 function createEvent(myEvent){
   var tourString = "";
-  for (var i = 0; i < myEvent.length; i++){
-    tourString += '<div class="events">';
-    tourString += '<p>' + myEvent[i].date + '</p>';
-    tourString += '<p>' + myEvent[i].city + '</p>';
-    tourString += '<p>' + myEvent[i].state + '</p>';
-    tourString += '<p>' + myEvent[i].time + '</p>';
-    tourString += '<p>' + myEvent[i].venue + '</p>';
-    tourString += '<a href="' + myEvent[i].tickets + '"><button>Buy Now</button></a>';
-    tourString += '</div>';
-  writeToDom(tourString, "tourSchedule");  
-  }
+    tourString += "<article class='event-header'>";
+    tourString += "<p class='date'>Date</p>";
+    tourString += "<p class='city'>City</p>";
+    tourString += "<p class='state'>State</p>";
+    tourString += "<p class='time'>Time</p>";
+    tourString += "<p class='venue'>Venue</p>";
+    tourString += "<p class='tickets'>Tickets</p>";
+    myString += "</article>";
     
-}
+  for (var i = 0; i < myEvent.length; i++){
+    tourString += '<article class="events">';
+    tourString += '<p class="date">' + myEvent[i].date + '</p>';
+    tourString += '<p class="city">' + myEvent[i].city + '</p>';
+    tourString += '<p class="state">' + myEvent[i].state + '</p>';
+    tourString += '<p class="time">' + myEvent[i].time + '</p>';
+    tourString += '<p class="venue">' + myEvent[i].venue + '</p>';
+    tourString += '<a href="' + myEvent[i].tickets + '"><button>Buy Now</button></a>';
+    tourString += '</article>';
+  };
+  writeToDom(tourString, "tourSchedule");    
+};
 createEvent(tourSchedule);
-=======
 
 var merch = [
   {
@@ -350,4 +357,3 @@ var merch = [
 ];
 
 
->>>>>>> master
