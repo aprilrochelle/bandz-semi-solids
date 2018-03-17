@@ -1,7 +1,11 @@
 // Write to DOM
 function writeToDom(outputString, outputId) {
-  document.getElementById(outputId).innerHTML = outputString;
+  document.getElementById(outputId).innerHTML += outputString;
 };
+
+
+//-----------BAND MEMBERS -------------------//
+
 
 var bandMembers =  [
   {
@@ -509,6 +513,4 @@ if(pageTitle === "Band"){
   suckIt(suckItMsg);
 } else if (pageTitle === "Home") {
   indexMiniTourCard(tourSchedule);
-
 }; 
-
