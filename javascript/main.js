@@ -400,3 +400,4 @@ if(pageTitle === "Band"){
 } else if (pageTitle === "Tour") {
   createEvent(tourSchedule);
 };
+
