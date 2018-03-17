@@ -221,8 +221,9 @@ var songs = [
 //-------------HOME----------------------//
 
 function indexMiniTourCard(tourDates) {
+  var miniTourOutput = "";
   tourDates.slice(0,3).forEach(function(e) {  //only returns first three shows
-    var miniTourOutput =
+    miniTourOutput +=
       "<div class='itemForMiniTour'><div class='firstMiniTourDiv'><p>" + e.date + "</p></div>" +
       "<div class='secondMiniTourDiv'><p>" + e.city + "</p></div>" +
       "<div class='thirdMiniTourDiv'><p>" + e.state + "</p></div>" +
