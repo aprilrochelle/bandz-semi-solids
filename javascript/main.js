@@ -413,4 +413,6 @@ if(pageTitle === "Band"){
   showMerch(merch);
 } else if (pageTitle === "Home") {
   indexMiniTourCard(tourSchedule);
-} 
+} else if (pageTitle === "Tour") {
+  createEvent(tourSchedule);
+}
