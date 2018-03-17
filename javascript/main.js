@@ -72,7 +72,6 @@ function bandMemberBuilder(bandArray){
 writeToDom(bandString, 'band-member-holder');
 };
 
-
 //-----------SONG LIST OBJECT ARRAY------------//
 
 var songs = [
@@ -241,7 +240,6 @@ function buildSongList(songArray){
   writeToDom(myString,"song-container");
 };
 
-
 var tourSchedule = [
   {
       date: "3/18/18",
@@ -388,8 +386,6 @@ function showMerch(array) {
   });
   writeToDom(itemCard, "merch-here");
 };
-
-
 
 //DECIDES WHAT PAGE IS CURRENT AND CALLS APPROPRIATE FUNCTION
 //OTHERWISE ERRORS OUT
