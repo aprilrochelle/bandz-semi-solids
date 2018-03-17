@@ -118,6 +118,15 @@ textarea {
   font-size: 18px;
 }
 
+.contact-main-label {
+  font-family: 'Coda Caption', sans-serif;
+  font-size: 20px;
+  text-align: center;  
+  color: #8c271e;
+  margin-bottom: 10px;
+  display: block;
+}
+
 .contact-form button {
   margin-left: 2px;
   font-size: 18px;
