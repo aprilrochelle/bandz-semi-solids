@@ -254,7 +254,6 @@ function buildSongList(songArray){
   writeToDom(myString,"song-container");
 };
 
-
 var tourSchedule = [
   {
       date: "3/18/18",
@@ -412,6 +411,8 @@ if(pageTitle === "Band"){
   buildSongList(songs);
 } else if (pageTitle === "Merch") {
   showMerch(merch);
+} else if (pageTitle === "Tour") {
+  createEvent(tourSchedule);
 } else if (pageTitle === "Home") {
   indexMiniTourCard(tourSchedule);
-} 
+}; 
