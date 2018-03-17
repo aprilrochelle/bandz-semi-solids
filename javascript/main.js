@@ -64,11 +64,6 @@ function bandMemberBuilder(bandArray){
   })
 }
 
-function printToDom(domString, divId){
-  var element = document.getElementById(divId);
-  element.innerHTML += domString;
-}
-
 bandMemberBuilder(bandMembers);
 
 
@@ -262,8 +257,8 @@ var tourDates = [
   }
 ];
 
-function indexMiniTourCard(inputTour) {
-  inputTour.slice(0,3).forEach(function(e) {  //only returns first three shows
+function indexMiniTourCard(tourDates) {
+  tourDates.slice(0,3).forEach(function(e) {  //only returns first three shows
     var miniTourOutput =
       "<div class='itemForMiniTour'><div class='firstMiniTourDiv'><p>" + e.date + "</p></div>" +
       "<div class='secondMiniTourDiv'><p>" + e.city + "</p></div>" +
@@ -272,7 +267,8 @@ function indexMiniTourCard(inputTour) {
     writeToDom(miniTourOutput, "mini-tour");
   });
 }
-indexMiniTourCard(tourDates);
+
+//indexMiniTourCard(tourSchedule);
 
 var merch = [
   {
