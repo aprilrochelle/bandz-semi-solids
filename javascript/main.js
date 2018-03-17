@@ -291,6 +291,10 @@ var suckItMsg = [
 
 
 function suckIt(msgArray){
+  var myString = document.getElementById("suckIt");
+  myString.innerHTML += "<img src='/images/cross-39414_1280.png' alt='404 File Not Found' id='cross' class='suckItElement'>";
+  myString.innerHTML += "<h1 class='suckItElement'>SUCK IT</h1>";
+  myString.innerHTML += "<a href='/index.html' id='goHome' class='suckItElement'>Back to Home</a>";
   var myMsg = msgArray[Math.floor(Math.random() * msgArray.length)];
   var msg = new SpeechSynthesisUtterance(myMsg);
   window.speechSynthesis.speak(msg);
