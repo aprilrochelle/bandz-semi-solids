@@ -55,6 +55,7 @@ var bandMembers =  [
   }
 ];
 
+
 function bandMemberBuilder(bandArray){
   var bandString = "";
   bandArray.forEach(function(bandMember){
@@ -217,10 +218,7 @@ var songs = [
   }
 ];
 
-// Write to DOM
-function writeToDom(outputString, outputId) {
-  document.getElementById(outputId).innerHTML += outputString;
-}
+//-------------HOME----------------------//
 
 function indexMiniTourCard(tourDates) {
   tourDates.slice(0,3).forEach(function(e) {  //only returns first three shows
@@ -415,4 +413,4 @@ if(pageTitle === "Band"){
   showMerch(merch);
 } else if (pageTitle === "Home") {
   indexMiniTourCard(tourSchedule);
-}
+} 
