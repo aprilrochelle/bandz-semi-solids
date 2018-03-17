@@ -347,7 +347,6 @@ function createEvent(myEvent){
     tourString += '<p class="venue">' + myEvent[i].venue + '</p>';
     tourString += '<a href="' + myEvent[i].tickets + '"><button>Buy Now</button></a>';
     tourString += '</article>';
-    console.log(tourString);
   };
   writeToDom(tourString, "tourSchedule");    
 };
