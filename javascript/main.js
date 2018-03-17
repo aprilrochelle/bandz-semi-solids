@@ -55,6 +55,7 @@ var bandMembers =  [
   }
 ];
 
+
 function bandMemberBuilder(bandArray){
   var bandString = "";
   bandArray.forEach(function(bandMember){
@@ -217,6 +218,18 @@ var songs = [
   }
 ];
 
+//-------------HOME----------------------//
+
+function indexMiniTourCard(tourDates) {
+  tourDates.slice(0,3).forEach(function(e) {  //only returns first three shows
+    var miniTourOutput =
+      "<div class='itemForMiniTour'><div class='firstMiniTourDiv'><p>" + e.date + "</p></div>" +
+      "<div class='secondMiniTourDiv'><p>" + e.city + "</p></div>" +
+      "<div class='thirdMiniTourDiv'><p>" + e.state + "</p></div>" +
+      "<div class='fourthMiniTourDiv'><p>" + e.venue + "</p></div></div>";
+    writeToDom(miniTourOutput, "mini-tour");
+  });
+}
 
 function buildSongList(songArray){
   var myString = "";
@@ -399,4 +412,6 @@ if(pageTitle === "Band"){
   showMerch(merch);
 } else if (pageTitle === "Tour") {
   createEvent(tourSchedule);
-};
+} else if (pageTitle === "Home") {
+  indexMiniTourCard(tourSchedule);
+}; 
