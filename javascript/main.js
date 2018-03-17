@@ -58,17 +58,18 @@ var bandMembers =  [
 function bandMemberBuilder(bandArray){
   var bandString = "";
   bandArray.forEach(function(bandMember){
-      bandString += "<div class='band-container'>";
-      bandString += "<img class='band-photo' src='" + bandMember.image + "'>";
-      bandString += "<h2>" + bandMember.name + "</h2>";
-      bandString += "<p>" + "<strong>Instrument: </strong>" + bandMember.instrument + "</p>";
-      bandString += "<p>" + "<strong>Age: </strong>" + bandMember.age + "</p>";
-      bandString += "<p>" + "<strong>Hometown: </strong>" + bandMember.hometown + "</p>";
-      bandString += "<p>" + "<strong>Favorite Band: </strong>" + bandMember.favoriteBand + "</p>";
-      bandString += "<p>" + "<strong>Favorite Semi-Solid: </strong>" + bandMember.favoriteSemiSolid + "</p>";
-      bandString += "</div>";
-  });
-  writeToDom(bandString, 'band-member-holder');
+    var string = "";
+    bandString += "<div class='band-container'>";
+    bandString += "<img class='band-photo' src='" + bandMember.image + "'>";
+    bandString += "<h2>" + bandMember.name + "</h2>";
+    bandString += "<p>" + "<strong>Instrument: </strong>" + bandMember.instrument + "</p>";
+    bandString += "<p>" + "<strong>Age: </strong>" + bandMember.age + "</p>";
+    bandString += "<p>" + "<strong>Hometown: </strong>" + bandMember.hometown + "</p>";
+    bandString += "<p>" + "<strong>Favorite Band: </strong>" + bandMember.favoriteBand + "</p>";
+    bandString += "<p>" + "<strong>Favorite Semi-Solid: </strong>" + bandMember.favoriteSemiSolid + "</p>";
+    bandString += "</div>";
+});
+writeToDom(bandString, 'band-member-holder');
 };
 
 //-----------SONG LIST OBJECT ARRAY------------//
@@ -221,44 +222,6 @@ function writeToDom(outputString, outputId) {
   document.getElementById(outputId).innerHTML += outputString;
 }
 
-var tourSchedule = [
-  {
-    date: "01/01/2018",
-    city: "Nashville",
-    state: "TN",
-    venue: "Ryman",
-    time: "7:00pm"
-  },
-  {
-    date: "01/02/2018",
-    city: "Nashville",
-    state: "TN",
-    venue: "Ryman",
-    time: "7:00pm"
-  },
-  {
-    date: "01/03/2018",
-    city: "Nashville",
-    state: "TN",
-    venue: "Ryman",
-    time: "7:00pm"
-  },
-  {
-    date: "01/04/2018",
-    city: "Nashville",
-    state: "TN",
-    venue: "Ryman",
-    time: "7:00pm"
-  },
-  {
-    date: "01/05/2018",
-    city: "Nashville",
-    state: "TN",
-    venue: "Ryman",
-    time: "7:00pm"
-  }
-];
-
 function indexMiniTourCard(tourDates) {
   tourDates.slice(0,3).forEach(function(e) {  //only returns first three shows
     var miniTourOutput =
@@ -293,7 +256,116 @@ function buildSongList(songArray){
 };
 
 
+var tourSchedule = [
+  {
+      date: "3/18/18",
+      city: "Nashville",
+      state: "Tennessee",
+      time: "7:00 PM",
+      venue: "Ryman Auditorium",
+      tickets: "suckit.html"
+  },
+  {
+      date: "3/23/18",
+      city: "Atlanta",
+      state: "Georgia",
+      time: "7:00 PM",
+      venue: "Fox Theatre",
+      tickets: "suckit.html"
+  },
+  {
+      date: "4/02/18",
+      city: "St. Louis",
+      state: "Missouri",
+      time: "7:00 PM",
+      venue: "Palladium",
+      tickets: "suckit.html"
+  },
+  {
+      date: "4/09/18",
+      city: "Chicago",
+      state: "Illinois",
+      time: "7:00 PM",
+      venue: "Buddy Guy's Legends",
+      tickets: "suckit.html"
+  },
+  {
+      date: "4/18/18",
+      city: "Detroit",
+      state: "Michigan",
+      time: "7:00 PM",
+      venue: "Detroit Opera House",
+      tickets: "suckit.html"
+  },
+  {
+      date: "4/24/18",
+      city: "North Tonawanda",
+      state: "New York",
+      time: "7:00 PM",
+      venue: "Majestic Theatre",
+      tickets: "suckit.html"
+  },
+  {
+      date: "5/01/18",
+      city: "Memphis",
+      state: "Tennessee",
+      time: "7:00 PM",
+      venue: "Orpheum Theatre",
+      tickets: "suckit.html"
+  },
+  {
+      date: "5/10/18",
+      city: "Redford",
+      state: "Michigan",
+      time: "7:00 PM",
+      venue: "Redford Jaycee Hall",
+      tickets: "suckit.html"
+  },
+  {
+      date: "5/18/18",
+      city: "Kansas City",
+      state: "Missouri",
+      time: "7:00 PM",
+      venue: "Midland Theatre",
+      tickets: "suckit.html"
+  },
+  {
+      date: "5/25/18",
+      city: "Los Angeles",
+      state: "California",
+      time: "7:00 PM",
+      venue: "LA Forum",
+      tickets: "suckit.html"
+  },
+];
+
+function createEvent(myEvent){
+  var tourString = "";
+    tourString += "<article class='event-header'>";
+    tourString += "<p class='date'>Date</p>";
+    tourString += "<p class='city'>City</p>";
+    tourString += "<p class='state'>State</p>";
+    tourString += "<p class='time'>Time</p>";
+    tourString += "<p class='venue'>Venue</p>";
+    tourString += "<p class='tickets'>Tickets</p>";
+    tourString += "</article>";
+    
+  for (var i = 0; i < myEvent.length; i++){
+    tourString += '<article class="events">';
+    tourString += '<p class="date">' + myEvent[i].date + '</p>';
+    
+    tourString += '<p class="city">' + myEvent[i].city + '</p>';
+    tourString += '<p class="state">' + myEvent[i].state + '</p>';
+    tourString += '<p class="time">' + myEvent[i].time + '</p>';
+    tourString += '<p class="venue">' + myEvent[i].venue + '</p>';
+    tourString += '<a href="' + myEvent[i].tickets + '"><button>Buy Now</button></a>';
+    tourString += '</article>';
+  };
+  writeToDom(tourString, "tourSchedule");    
+};
+
 // MERCH OBJECT
+
 var merch = [
   {
     item: "Semi-Solids Tee",
