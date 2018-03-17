@@ -44,6 +44,12 @@ header {
 }
 
 /*-----------------TOUR SCHEDULE-------*/
+h1 {
+  font-family: 'Coda Caption', sans-serif;
+  font-size: 40px;
+  text-align: center;  
+  color: #8c271e;
+}
 
 .event-header {
   font-weight: 800;
