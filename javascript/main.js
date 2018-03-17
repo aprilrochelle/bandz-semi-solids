@@ -71,7 +71,6 @@ function bandMemberBuilder(bandArray){
   writeToDom(bandString, 'band-member-holder');
 };
 
-bandMemberBuilder(bandMembers);
 
 
 //-----------SONG LIST OBJECT ARRAY------------//
@@ -246,7 +245,7 @@ var merch = [
 
 // SHOW MERCH FUNCTION
 function showMerch(array) {
-  var itemCard;
+  var itemCard = "";
   array.forEach(function(merchItem) {
     itemCard += '<div class="merch-card"><h3>' + merchItem.item + '</h3>';
     itemCard += '<img src="' + merchItem.image + '" alt="Merch Item" width="300">';
@@ -257,4 +256,16 @@ function showMerch(array) {
   writeToDom(itemCard, "merch-here");
 };
 
-showMerch(merch);
+
+
+//DECIDES WHAT PAGE IS CURRENT AND CALLS APPROPRIATE FUNCTION
+//OTHERWISE ERRORS OUT
+var currentPage = document.title;
+var pageTitle = currentPage.split(" ").pop();
+if(pageTitle === "Band"){
+  bandMemberBuilder(bandMembers);
+}else if(pageTitle === "Songs"){
+  buildSongList(songs);
+} else if (pageTitle === "Merch") {
+  showMerch(merch);
+};
