@@ -251,6 +251,7 @@ function buildSongList(songArray){
   writeToDom(myString,"song-container");
 };
 
+
 //-----------BAND MEMBERS OBJECTS-------------------//
 
 var bandMembers =  [
@@ -316,7 +317,6 @@ function bandMemberBuilder(bandArray){
   });
   writeToDom(bandString, 'band-member-holder');
 };
-
 
 var tourSchedule = [
   {
@@ -509,5 +509,6 @@ if(pageTitle === "Band"){
   suckIt(suckItMsg);
 } else if (pageTitle === "Home") {
   indexMiniTourCard(tourSchedule);
-} 
+
+}; 
 
