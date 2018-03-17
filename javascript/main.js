@@ -1,73 +1,75 @@
 
-//-----------BAND MEMBERS -------------------//
+// Write to DOM
+function writeToDom(outputString, divId) {
+  document.getElementById(divId).innerHTML = outputString;
+}
 
-var bandMembers =  [
+
+// //-----------BAND MEMBERS -------------------//
+
+var bandMembers = [
   {
-  image: "../images/andy.jpg",
-  name: "Andy Million",
-  instrument: "Drums",
-  age: 34,
-  hometown: "Redford, MI",
-  favoriteBand: "Sublime",
-  favoriteSemiSolid: "Toothpaste"
-},
-{
-  image: "../images/april.jpg",
-  name: "April Nichols",
-  instrument: "Vocals, Tamborine and Keys",
-  age: 35,
-  hometown: "Memphis, TN",
-  favoriteBand: "Marvin Gaye, Frankie Beverly and Moonchild",
-  favoriteSemiSolid: "Playdough"
-},
-{
-  image: "../images/amanda.jpg",
-  name: "Amanda Slayton",
-  instrument: "Lead Vocals",
-  age: 31,
-  hometown: "North Tonawanda, NY",
-  favoriteBand: "Faun",
-  favoriteSemiSolid: "Oobleck"
-},
-{
-  image: "../images/mary.jpg",
-  name: "Mary Alice Orr",
-  instrument: "Harmony and Back-Up Dancing",
-  age: 31,
-  hometown: "Los Angeles, CA",
-  favoriteBand: "The Eagles",
-  favoriteSemiSolid: "Mashed Potatoes"
-},
-{
-  image: "../images/nathan.jpg",
-  name: "Nathan Pabst",
-  instrument: "Guitar",
-  age: 38,
-  hometown: "Kansas City, MO",
-  favoriteBand: "Father John Mitsy",
-  favoriteSemiSolid: "Mac & Cheese"
-}];
+    image: "/images/andy.jpg",
+    name: "Andy Million",
+    instrument: "Drums",
+    age: 34,
+    hometown: "Redford, MI",
+    favoriteBand: "Sublime",
+    favoriteSemiSolid: "Toothpaste"
+  },
+  {
+    image: "/images/april.jpg",
+    name: "April Nichols",
+    instrument: "Vocals, Tamborine and Keys",
+    age: 35,
+    hometown: "Memphis, TN",
+    favoriteBand: "Marvin Gaye, Frankie Beverly and Moonchild",
+    favoriteSemiSolid: "Playdough"
+  },
+  {
+    image: "/images/amanda.jpg",
+    name: "Amanda Slayton",
+    instrument: "Lead Vocals",
+    age: 31,
+    hometown: "North Tonawanda, NY",
+    favoriteBand: "Faun",
+    favoriteSemiSolid: "Oobleck"
+  },
+  {
+    image: "/images/mary.jpg",
+    name: "Mary Alice Orr",
+    instrument: "Harmony and Back-Up Dancing",
+    age: 31,
+    hometown: "Los Angeles, CA",
+    favoriteBand: "The Eagles",
+    favoriteSemiSolid: "Mashed Potatoes"
+  },
+  {
+    image: "/images/nathan.jpg",
+    name: "Nathan Pabst",
+    instrument: "Guitar",
+    age: 38,
+    hometown: "Kansas City, MO",
+    favoriteBand: "Father John Mitsy",
+    favoriteSemiSolid: "Mac & Cheese"
+  }
+];
 
 function bandMemberBuilder(bandArray){
+  var bandString = "";
   bandArray.forEach(function(bandMember){
-    var string = "";
-    string += "<div class='band-container'>";
-      string += "<img class='band-photo' src='" + bandMember.image + "'>";
-      string += "<h2>" + bandMember.name + "</h2>";
-      string += "<p>" + "<strong>Instrument: </strong>" + bandMember.instrument + "</p>";
-      string += "<p>" + "<strong>Age: </strong>" + bandMember.age + "</p>";
-      string += "<p>" + "<strong>Hometown: </strong>" + bandMember.hometown + "</p>";
-      string += "<p>" + "<strong>Favorite Band: </strong>" + bandMember.favoriteBand + "</p>";
-      string += "<p>" + "<strong>Favorite Semi-Solid: </strong>" + bandMember.favoriteSemiSolid + "</p>";
-    string += "</div>";
-    printToDom(string, 'band-member-holder')
-  })
-}
-
-function printToDom(domString, divId){
-  var element = document.getElementById(divId);
-  element.innerHTML += domString;
-}
+      bandString += "<div class='band-container'>";
+      bandString += "<img class='band-photo' src='" + bandMember.image + "'>";
+      bandString += "<h2>" + bandMember.name + "</h2>";
+      bandString += "<p>" + "<strong>Instrument: </strong>" + bandMember.instrument + "</p>";
+      bandString += "<p>" + "<strong>Age: </strong>" + bandMember.age + "</p>";
+      bandString += "<p>" + "<strong>Hometown: </strong>" + bandMember.hometown + "</p>";
+      bandString += "<p>" + "<strong>Favorite Band: </strong>" + bandMember.favoriteBand + "</p>";
+      bandString += "<p>" + "<strong>Favorite Semi-Solid: </strong>" + bandMember.favoriteSemiSolid + "</p>";
+      bandString += "</div>";
+  });
+  writeToDom(bandString, 'band-member-holder');
+};
 
 bandMemberBuilder(bandMembers);
 
@@ -217,12 +219,6 @@ var songs = [
 ];
 
 
-// Write to DOM
-function writeToDom(outputString, outputId) {
-  document.getElementById(outputId).innerHTML = outputString;
-}
-
-
 // MERCH OBJECT
 var merch = [
   {
@@ -243,21 +239,21 @@ var merch = [
     item: "Semi-Solids Vinyl",
     image: "/images/merch-vinyl.jpg",
     price: 20,
-    description: "Keep the party going with the greatest Semi-Solids hits on VINYL! How cool are YOU?!",
+    description: "Keep the party going with the greatest Semi-Solids hits on VINYL!",
     link: "/html/suckit.html"
   }
 ];
 
 // SHOW MERCH FUNCTION
-function showMerch(array){
+function showMerch(array) {
   var itemCard;
-  for (var i=0; i<array.length; i++) {
-    itemCard += '<div class="merch-card"><h3>' + array[i].item + '</h3>';
-    itemCard += '<img src="' + array[i].image + '" alt="Merch Item" width="300">';
-    itemCard += '<h4>Price: ' + array[i].price + ' USD</h4>';
-    itemCard += '<p>' + array[i].description + '</p>';
-    itemCard += '<a href="' + array[i].link + '"><button>Buy Now</button></a></div>';
-  };
+  array.forEach(function(merchItem) {
+    itemCard += '<div class="merch-card"><h3>' + merchItem.item + '</h3>';
+    itemCard += '<img src="' + merchItem.image + '" alt="Merch Item" width="300">';
+    itemCard += '<h4>Price: ' + merchItem.price + ' USD</h4>';
+    itemCard += '<p>' + merchItem.description + '</p>';
+    itemCard += '<a href="' + merchItem.link + '"><button>Buy Now</button></a></div>';
+  });
   writeToDom(itemCard, "merch-here");
 };
 
