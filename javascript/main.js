@@ -64,7 +64,7 @@ function bandMemberBuilder(bandArray){
   })
 }
 
-//bandMemberBuilder(bandMembers);
+bandMemberBuilder(bandMembers);
 
 
 //-----------SONG LIST OBJECT ARRAY------------//
@@ -268,7 +268,7 @@ function indexMiniTourCard(tourDates) {
   });
 }
 
-indexMiniTourCard(tourSchedule);
+//indexMiniTourCard(tourSchedule);
 
 var merch = [
   {
