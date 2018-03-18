@@ -300,14 +300,24 @@ audio {
   font-family: 'Coda Caption', sans-serif;
   border: 10px solid #aba194;
   background-color: #cfcbca;
-  height: 600px;
+  height: 700px;
   width: 325px;
   margin: 50px 70px;
   align-items: center;
   box-shadow: 3px 3px 10px #aba194; 
 }
 
+.band-border-photo {
+  background-image: url("/images/member-border.png");
+  background-size: 300px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-bottom: 20px;
 
+}
+.band-container h1 {
+  padding-top: 25px;
+}
 .band-container h2 {
   text-align: center;
   font-size: 24px;
@@ -326,6 +336,5 @@ audio {
   width: 275px;
   height: 275px;
   border-radius: 50%;
-  border: 5px dashed black;
   margin-top: 25px; 
 }
