@@ -88,14 +88,14 @@ function songChoiceBuilder(favoriteSongs) {
     for (var i=0; i<songs.length; i++) {
       for (var j=0; j<favoriteSongs.length; j++) {
         if (songs[i].songId === favoriteSongs[j]) {
-          songChoiceString += "<span>" + '"' + songs[i].name + '"' + comma + "</span>";
+          songChoiceString += "<span>" + '"' + songs[i].name + '"' + " " + "</span>";
         } 
       }
     }
     return songChoiceString;
 };
  
-var comma = " , ";
+
 
 
 
