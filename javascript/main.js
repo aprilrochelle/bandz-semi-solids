@@ -391,7 +391,8 @@ function createEvent(myEvent){
   };
   writeToDom(tourString, "tourSchedule");    
 };
-// MERCH OBJECT
+
+// -------------MERCH PAGE ----------------- //
 
 var merch = [
   {
@@ -399,6 +400,7 @@ var merch = [
     image: "/images/merch-tee.jpg",
     price: 20,
     description: "You'll look the hottest in your Semi-Solids logo tee! Cop yours today!",
+    sizes: ["Small", "Medium", "Large", "X-Large", "2X"],
     link: "/html/suckit.html"
   },
   {
@@ -406,6 +408,7 @@ var merch = [
     image: "/images/merch-hat.jpg",
     price: 10,
     description: "Complete the look with your Semi-Solids logo hat. One size fits most.",
+    sizes: ["One Size fits Most", "Bigger Than Most"],
     link: "/html/suckit.html"
   },
   {
@@ -413,6 +416,7 @@ var merch = [
     image: "/images/merch-vinyl.jpg",
     price: 20,
     description: "Keep the party going with the greatest Semi-Solids hits on VINYL!",
+    sizes: ["45", "33"],
     link: "/html/suckit.html"
   }
 ];
@@ -424,10 +428,20 @@ function showMerch(array) {
     itemCard += '<img src="' + merchItem.image + '" alt="Merch Item" width="300">';
     itemCard += '<h4>Price: ' + merchItem.price + ' USD</h4>';
     itemCard += '<p>' + merchItem.description + '</p>';
+    itemCard += selectSize(merch);
     itemCard += '<a href="' + merchItem.link + '"><button>Buy Now</button></a></div>';
   });
   writeToDom(itemCard, "merch-here");
 };
+
+function selectSize(array) {
+  var selection = '<select name="size-selection">';
+    array.forEach(function(e){
+      selection += '<option value="' + e.sizes + '">' + e.sizes + '</option>';
+    });
+    selection += '</select>';
+    return selection;
+}
 
 //----------SUCK IT MESSAGE----------//
 var suckItMsg = [
