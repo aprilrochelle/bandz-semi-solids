@@ -15,7 +15,8 @@ var bandMembers =  [
     age: 34,
     hometown: "Redford, MI",
     favoriteBand: "Sublime",
-    favoriteSemiSolid: "Toothpaste"
+    favoriteSemiSolid: "Toothpaste",
+    favoriteSongs: [10, 2]
   },
   {
     image: "/images/april.jpg",
@@ -24,7 +25,8 @@ var bandMembers =  [
     age: 35,
     hometown: "Memphis, TN",
     favoriteBand: "Marvin Gaye, Frankie Beverly and Moonchild",
-    favoriteSemiSolid: "Playdough"
+    favoriteSemiSolid: "Playdough",
+    favoriteSongs: [7, 1]
   },
   {
     image: "/images/amanda.jpg",
@@ -33,7 +35,8 @@ var bandMembers =  [
     age: 31,
     hometown: "North Tonawanda, NY",
     favoriteBand: "Faun",
-    favoriteSemiSolid: "Oobleck"
+    favoriteSemiSolid: "Oobleck",
+    favoriteSongs: [5, 4]
   },
   {
     image: "/images/mary.jpg",
@@ -42,7 +45,8 @@ var bandMembers =  [
     age: 31,
     hometown: "Los Angeles, CA",
     favoriteBand: "The Eagles",
-    favoriteSemiSolid: "Mashed Potatoes"
+    favoriteSemiSolid: "Mashed Potatoes",
+    favoriteSongs: [17, 3]
   },
   {
     image: "/images/nathan.jpg",
@@ -51,7 +55,8 @@ var bandMembers =  [
     age: 38,
     hometown: "Kansas City, MO",
     favoriteBand: "Father John Mitsy",
-    favoriteSemiSolid: "Mac & Cheese"
+    favoriteSemiSolid: "Mac & Cheese",
+    favoriteSongs: [14, 16]
   }
 ];
 
@@ -60,18 +65,40 @@ function bandMemberBuilder(bandArray){
   var bandString = "";
   bandArray.forEach(function(bandMember){
     var string = "";
-    bandString += "<div class='band-container'>";
-    bandString += "<img class='band-photo' src='" + bandMember.image + "'>";
-    bandString += "<h2>" + bandMember.name + "</h2>";
-    bandString += "<p>" + "<strong>Instrument: </strong>" + bandMember.instrument + "</p>";
-    bandString += "<p>" + "<strong>Age: </strong>" + bandMember.age + "</p>";
-    bandString += "<p>" + "<strong>Hometown: </strong>" + bandMember.hometown + "</p>";
-    bandString += "<p>" + "<strong>Favorite Band: </strong>" + bandMember.favoriteBand + "</p>";
-    bandString += "<p>" + "<strong>Favorite Semi-Solid: </strong>" + bandMember.favoriteSemiSolid + "</p>";
-    bandString += "</div>";
+      bandString += "<div class='band-container'>";
+        bandString +="<div class='band-border-photo'>"
+          bandString += "<img class='band-photo' src='" + bandMember.image + "'>";
+        bandString += "</div>"
+        bandString += "<h2>" + bandMember.name + "</h2>";
+        bandString += "<p>" + "<strong>Instrument: </strong>" + bandMember.instrument + "</p>";
+        bandString += "<p>" + "<strong>Age: </strong>" + bandMember.age + "</p>";
+        bandString += "<p>" + "<strong>Hometown: </strong>" + bandMember.hometown + "</p>";
+        bandString += "<p>" + "<strong>Favorite Band: </strong>" + bandMember.favoriteBand + "</p>";
+        bandString += "<p>" + "<strong>Favorite Semi-Solid: </strong>" + bandMember.favoriteSemiSolid + "</p>";
+        bandString += "<p>" + "<strong>Favorite Semi-Solid Songs: </strong>" + songChoiceBuilder(bandMember.favoriteSongs) + "</p>";
+      bandString += "</div>";
 });
 writeToDom(bandString, 'band-member-holder');
 };
+
+
+
+function songChoiceBuilder(favoriteSongs) {
+  var songChoiceString= "";
+    for (var i=0; i<songs.length; i++) {
+      for (var j=0; j<favoriteSongs.length; j++) {
+        if (songs[i].songId === favoriteSongs[j]) {
+          songChoiceString += "<span>" + '"' + songs[i].name + '"' + " " + "</span>";
+        } 
+      }
+    }
+    return songChoiceString;
+};
+ 
+
+
+
+
 
 //-----------SONG LIST OBJECT ARRAY------------//
 
@@ -513,4 +540,4 @@ if(pageTitle === "Band"){
   suckIt(suckItMsg);
 } else if (pageTitle === "Home") {
   indexMiniTourCard(tourSchedule);
-}; 
+};
