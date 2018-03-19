@@ -461,18 +461,22 @@ function suckIt(msgArray){
 
 //DECIDES WHAT PAGE IS CURRENT AND CALLS APPROPRIATE FUNCTION
 //OTHERWISE ERRORS OUT
-var currentPage = document.title;
-var pageTitle = currentPage.split(" ").pop();
-if(pageTitle === "Band"){
-  bandMemberBuilder(bandMembers);
-}else if(pageTitle === "Songs"){
-  buildSongList(songs);
-}else if(pageTitle === "Merch"){
-  showMerch(merch);
-}else if(pageTitle === "Tour"){
-  createEvent(tourSchedule);
-}else if(pageTitle === "404"){
-  suckIt(suckItMsg);
-} else if (pageTitle === "Home") {
-  indexMiniTourCard(tourSchedule);
+function pickAPage(){
+  var currentPage = document.title;
+  var pageTitle = currentPage.split(" ").pop();
+  if(pageTitle === "Band"){
+    bandMemberBuilder(bandMembers);
+  }else if(pageTitle === "Songs"){
+    buildSongList(songs);
+  }else if(pageTitle === "Merch"){
+    showMerch(merch);
+  }else if(pageTitle === "Tour"){
+    createEvent(tourSchedule);
+  }else if(pageTitle === "404"){
+    suckIt(suckItMsg);
+  } else if (pageTitle === "Home") {
+    indexMiniTourCard(tourSchedule);
+  };
 };
+
+pickAPage();
