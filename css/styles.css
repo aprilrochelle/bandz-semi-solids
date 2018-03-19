@@ -338,3 +338,17 @@ audio {
   border-radius: 50%;
   margin-top: 25px; 
 }
+
+/* SUCK IT STYLING */
+
+img#cross {
+  display: block;
+  width: 30%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 20px;
+}
+
+#suckIt-Container {
+  background-color: black;
+}
