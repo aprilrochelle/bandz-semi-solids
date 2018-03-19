@@ -419,7 +419,7 @@ var merch = [
     sizes: ["45", "33"],
     link: "/html/suckit.html"
   }
-];
+]
 
 function showMerch(array) {
   var itemCard = "";
@@ -428,7 +428,7 @@ function showMerch(array) {
     itemCard += '<img src="' + merchItem.image + '" alt="Merch Item" width="300">';
     itemCard += '<h4>Price: ' + merchItem.price + ' USD</h4>';
     itemCard += '<p>' + merchItem.description + '</p>';
-    itemCard += selectSize(merch);
+    itemCard += selectSize(merchItem.sizes);
     itemCard += '<a href="' + merchItem.link + '"><button>Buy Now</button></a></div>';
   });
   writeToDom(itemCard, "merch-here");
@@ -436,10 +436,10 @@ function showMerch(array) {
 
 function selectSize(array) {
   var selection = '<select name="size-selection">';
-    array.forEach(function(e){
-      selection += '<option value="' + e.sizes + '">' + e.sizes + '</option>';
+    array.forEach(function(size){
+      selection += '<option value="' + size + '">' + size + '</option>';
     });
-    selection += '</select>';
+     selection += '</select>';
     return selection;
 }
 
