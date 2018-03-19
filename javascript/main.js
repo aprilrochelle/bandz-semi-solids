@@ -256,8 +256,8 @@ function indexMiniTourCard(tourDates) {
       "<div class='secondMiniTourDiv'><p>" + e.city + "</p></div>" +
       "<div class='thirdMiniTourDiv'><p>" + e.state + "</p></div>" +
       "<div class='fourthMiniTourDiv'><p>" + e.venue + "</p></div></div>";
-    writeToDom(miniTourOutput, "mini-tour");
   });
+  writeToDom(miniTourOutput, "mini-tour");
 }
 
 function buildSongList(songArray){
