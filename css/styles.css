@@ -231,6 +231,11 @@ footer p {
   max-width: 95%;
 }
 
+.merch-card select {
+  display: block;
+  margin: 10px auto;
+}
+
 .merch-card button {
   padding: 10px;
   font-size: 16px;
