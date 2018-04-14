@@ -1,7 +1,22 @@
 # Static Web Group Project - Band Website
 
-As a team, build the web site for the band name your team has been given. The team gets to decide how you interpret your band name. Be creative and have fun.
+## Description
+Practiced writing HTML, CSS and JavaScript code, as well as team collaboration with Github, by creating a website for a failed band: The Semi-Solids.
 
+## Screenshots
+![Webpage](https://raw.githubusercontent.com/nss-evening-cohort-7/bandz-semi-solids/master/screenshots/band-screen1.png)
+
+![Webpage](https://raw.githubusercontent.com/nss-evening-cohort-7/bandz-semi-solids/master/screenshots/band-screen2.png)
+
+![Webpage](https://raw.githubusercontent.com/nss-evening-cohort-7/bandz-semi-solids/master/screenshots/band-screen3.png)
+
+![Webpage](https://raw.githubusercontent.com/nss-evening-cohort-7/bandz-semi-solids/master/screenshots/band-screen4.png)
+
+![Webpage](https://raw.githubusercontent.com/nss-evening-cohort-7/bandz-semi-solids/master/screenshots/band-screen5.png)
+
+![Webpage](https://raw.githubusercontent.com/nss-evening-cohort-7/bandz-semi-solids/master/screenshots/band-screen6.png)
+
+![Webpage](https://raw.githubusercontent.com/nss-evening-cohort-7/bandz-semi-solids/master/screenshots/band-screen7.png)
 
 ## Requirements
 
